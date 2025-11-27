@@ -1,0 +1,95 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    monitor: 'aihem-monitor'
+
+# Alerting configuration (intentionally minimal for education)
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+# Scrape configurations
+scrape_configs:
+  # Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Auth Service
+  - job_name: 'auth-service'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['auth-service:8000']
+        labels:
+          service: 'auth'
+
+  # ChatBot Service
+  - job_name: 'chatbot-service'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['chatbot-service:8000']
+        labels:
+          service: 'chatbot'
+
+  # RAG Service
+  - job_name: 'rag-service'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['rag-service:8000']
+        labels:
+          service: 'rag'
+
+  # Agent Service
+  - job_name: 'agent-service'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['agent-service:8000']
+        labels:
+          service: 'agent'
+
+  # Model Registry
+  - job_name: 'model-registry'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['model-registry:8000']
+        labels:
+          service: 'model-registry'
+
+  # Challenge Validator
+  - job_name: 'challenge-validator'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['challenge-validator:8000']
+        labels:
+          service: 'challenge-validator'
+
+  # PostgreSQL Exporter (if added)
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['postgres:5432']
+        labels:
+          service: 'postgres'
+
+  # Redis Exporter (if added)
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379']
+        labels:
+          service: 'redis'
+
+  # MongoDB Exporter (if added)
+  - job_name: 'mongodb'
+    static_configs:
+      - targets: ['mongodb:27017']
+        labels:
+          service: 'mongodb'
+
+  # Kong Gateway
+  - job_name: 'kong'
+    metrics_path: '/metrics'
+    static_configs:
+      - targets: ['kong:8001']
+        labels:
+          service: 'kong'

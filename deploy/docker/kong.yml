@@ -1,0 +1,169 @@
+_format_version: "3.0"
+_transform: true
+
+# ====================================================================
+# AIHEM - Kong API Gateway Configuration
+# ====================================================================
+# This configuration contains intentional vulnerabilities for education
+# ====================================================================
+
+services:
+  # Auth Service
+  - name: auth-service
+    url: http://auth-service:8000
+    routes:
+      - name: auth-routes
+        paths:
+          - /api/auth
+        strip_path: true
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - OPTIONS
+
+  # ChatBot Service
+  - name: chatbot-service
+    url: http://chatbot-service:8000
+    routes:
+      - name: chatbot-routes
+        paths:
+          - /api/chat
+        strip_path: true
+        methods:
+          - GET
+          - POST
+          - OPTIONS
+      - name: chatbot-ws
+        paths:
+          - /ws/chat
+        strip_path: true
+        protocols:
+          - http
+          - https
+
+  # RAG Service
+  - name: rag-service
+    url: http://rag-service:8000
+    routes:
+      - name: rag-routes
+        paths:
+          - /api/rag
+        strip_path: true
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - OPTIONS
+
+  # Agent Service
+  - name: agent-service
+    url: http://agent-service:8000
+    routes:
+      - name: agent-routes
+        paths:
+          - /api/agent
+        strip_path: true
+        methods:
+          - GET
+          - POST
+          - OPTIONS
+
+  # Model Registry
+  - name: model-registry
+    url: http://model-registry:8000
+    routes:
+      - name: model-routes
+        paths:
+          - /api/models
+        strip_path: true
+        methods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - OPTIONS
+
+  # Challenge Validator
+  - name: challenge-validator
+    url: http://challenge-validator:8000
+    routes:
+      - name: challenge-routes
+        paths:
+          - /api/challenges
+        strip_path: true
+        methods:
+          - GET
+          - POST
+          - OPTIONS
+
+# Plugins (intentionally misconfigured for vulnerabilities)
+plugins:
+  # VULNERABILITY: CORS allows all origins
+  - name: cors
+    config:
+      origins:
+        - "*"
+      methods:
+        - GET
+        - POST
+        - PUT
+        - DELETE
+        - PATCH
+        - OPTIONS
+      headers:
+        - Accept
+        - Authorization
+        - Content-Type
+        - X-API-Key
+        - X-Admin-Key
+      exposed_headers:
+        - X-Auth-Token
+        - X-Debug-Info
+      credentials: true
+      max_age: 3600
+
+  # VULNERABILITY: Rate limiting is too permissive
+  - name: rate-limiting
+    config:
+      second: 100
+      minute: 1000
+      hour: 10000
+      policy: local
+      fault_tolerant: true
+      hide_client_headers: false
+
+  # VULNERABILITY: Request logging includes sensitive data
+  - name: file-log
+    config:
+      path: /var/log/kong/requests.log
+      reopen: true
+
+# Consumers (for challenge scenarios)
+consumers:
+  - username: admin
+    custom_id: admin-user
+  - username: hacker
+    custom_id: hacker-user
+  - username: student
+    custom_id: student-user
+
+# JWT Credentials (VULNERABILITY: Weak secrets)
+jwt_secrets:
+  - consumer: admin
+    key: admin-jwt-key
+    secret: aihem-secret-key-2024  # VULNERABILITY: Hardcoded secret
+    algorithm: HS256
+  - consumer: hacker
+    key: hacker-jwt-key
+    secret: aihem-secret-key-2024  # Same secret - VULNERABILITY
+    algorithm: HS256
+
+# Key Auth (for API key challenges)
+keyauth_credentials:
+  - consumer: admin
+    key: admin123  # VULNERABILITY: Weak API key
+  - consumer: hacker
+    key: hacker123  # VULNERABILITY: Predictable key

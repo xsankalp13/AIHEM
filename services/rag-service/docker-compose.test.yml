@@ -1,0 +1,28 @@
+version: '3.8'
+
+# Standalone RAG Service - No dependencies!
+# Use this to test the RAG service in isolation before running the full stack
+
+services:
+  rag-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: aihem-rag-service-test
+    environment:
+      LOG_LEVEL: DEBUG
+    ports:
+      - "8003:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      start_period: 40s
+      retries: 3
+
+# To use this:
+# 1. cd /home/user/AIHEM/services/rag-service
+# 2. docker-compose -f docker-compose.test.yml up --build
+# 3. Watch the logs - should see "✅ Initialized system documents with secrets"
+# 4. Test: curl http://localhost:8003/health
+# 5. Expected: {"status":"healthy","vector_store":"ready","collections":2,"total_documents":2}

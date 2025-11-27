@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(/Users/shlokabhalgat/Desktop/**)",
+      "Read(/Users/shlokabhalgat/Desktop/**)",
+      "Read(/Users/shlokabhalgat/Desktop/**)",
+      "Read(/Users/shlokabhalgat/Desktop/**)",
+      "Bash(curl:*)",
+      "Bash(docker-compose:*)",
+      "Bash(docker logs:*)",
+      "Bash(docker restart:*)",
+      "Bash(docker exec:*)",
+      "Read(/Users/shlokabhalgat/Desktop/**)",
+      "Bash(docker cp:*)",
+      "WebFetch(domain:platform.openai.com)",
+      "Bash(python3:*)",
+      "Bash(chmod:*)",
+      "Bash(npm run build)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
