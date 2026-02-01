@@ -1,4 +1,4 @@
-# AIHEM .gitignore
+# Autoagenix Labs .gitignore
 
 # Environment files
 .env
@@ -15,7 +15,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-/var/log/aihem/
+/var/log/autoagenix/
 deploy/docker/logs/
 
 # Runtime data

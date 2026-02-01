@@ -1,5 +1,5 @@
 """
-AIHEM Agent Service - Intentionally Vulnerable Agent Service
+Autoagenix Labs Agent Service - Intentionally Vulnerable Agent Service
 ============================================================
 Vulnerabilities: LLM06 (Excessive Agency), Tool confusion
 """
@@ -15,7 +15,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="AIHEM Agent Service", version="1.0.0")
+app = FastAPI(title="Autoagenix Labs Agent Service", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
 ALLOW_CODE_EXECUTION = os.getenv("ALLOW_CODE_EXECUTION", "true").lower() == "true"
@@ -37,7 +37,7 @@ AVAILABLE_TOOLS = {
 
 @app.get("/")
 async def root():
-    return {"service": "AIHEM Agent Service", "status": "running", "warning": "⚠️ Excessive agency enabled"}
+    return {"service": "Autoagenix Labs Agent Service", "status": "running", "warning": "⚠️ Excessive agency enabled"}
 
 @app.get("/health")
 async def health():

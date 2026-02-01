@@ -1,5 +1,5 @@
 """
-AIHEM RAG Service - Simplified Lightweight Version
+Autoagenix Labs RAG Service - Simplified Lightweight Version
 ==================================================
 ⚠️  WARNING: Contains intentional vulnerabilities
 ⚠️  FOR EDUCATIONAL USE ONLY
@@ -26,7 +26,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
-    title="AIHEM RAG Service",
+    title="Autoagenix Labs RAG Service",
     description="⚠️ Intentionally Vulnerable RAG Service",
     version="1.0.0"
 )
@@ -128,7 +128,7 @@ async def startup():
         vector_store.add_document(
             collection="system_documents",
             doc_id="sys_002",
-            content="API key: aihem_api_key_secret",
+            content="API key: autoagenix_api_key_secret",
             metadata={"type": "secret", "sensitive": True}
         )
         logger.info("✅ Initialized system documents with secrets")
@@ -137,7 +137,7 @@ async def startup():
 
 @app.get("/")
 async def root():
-    return {"service": "AIHEM RAG Service", "status": "running", "warning": "⚠️ Intentionally vulnerable"}
+    return {"service": "Autoagenix Labs RAG Service", "status": "running", "warning": "⚠️ Intentionally vulnerable"}
 
 @app.get("/health")
 async def health():

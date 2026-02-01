@@ -1,9 +1,9 @@
 blank_issues_enabled: true
 contact_links:
   - name: Security Issues
-    url: https://github.com/JBAhire/AIHEM/security
+    url: https://github.com/JBAhire/Autoagenix Labs/security
     about: Please report security vulnerabilities privately
   - name: Discussions
-    url: https://github.com/JBAhire/AIHEM/discussions
+    url: https://github.com/JBAhire/Autoagenix Labs/discussions
     about: Ask questions and discuss ideas with the community
 

@@ -1,8 +1,8 @@
-# 🎯 AIHEM - AI Hacking Educational Module
+# 🎯 Autoagenix Labs - AI Hacking Educational Module
 
 <div align="center">
 
-![AIHEM Logo](https://img.shields.io/badge/AIHEM-v1.0.0-blue)
+![Autoagenix Labs Logo](https://img.shields.io/badge/Autoagenix%20Labs-v1.0.0-blue)
 ![License](https://img.shields.io/badge/license-Apache%202.0-green)
 ![Status](https://img.shields.io/badge/status-educational-orange)
 ![Security](https://img.shields.io/badge/security-intentionally_vulnerable-red)
@@ -27,11 +27,11 @@
 
 ---
 
-## 📖 What is AIHEM?
+## 📖 What is Autoagenix Labs?
 
-AIHEM (AI Hacking Educational Module) is an intentionally vulnerable AI application platform designed to educate developers, security professionals, and AI practitioners about AI/LLM security vulnerabilities through hands-on exploitation.
+Autoagenix Labs (AI Hacking Educational Module) is an intentionally vulnerable AI application platform designed to educate developers, security professionals, and AI practitioners about AI/LLM security vulnerabilities through hands-on exploitation.
 
-Inspired by OWASP's crAPI and WebGoat, AIHEM provides a safe, realistic environment where you can:
+Inspired by OWASP's crAPI and WebGoat, Autoagenix Labs provides a safe, realistic environment where you can:
 
 - 🎓 **Learn** about AI security vulnerabilities (OWASP LLM Top 10)
 - 🔍 **Discover** real-world attack patterns (MITRE ATLAS)
@@ -53,8 +53,8 @@ Inspired by OWASP's crAPI and WebGoat, AIHEM provides a safe, realistic environm
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/JBAhire/AIHEM.git
-   cd AIHEM
+   git clone https://github.com/JBAhire/Autoagenix Labs.git
+   cd Autoagenix Labs
    ```
 
 2. **Configure environment** (Optional if you don't need ChatBot/Agent)
@@ -222,7 +222,7 @@ docker-compose up -d rag-service
 
 ## 🎯 Challenges - 33 AI Security Challenges
 
-AIHEM features **33 comprehensive challenges** covering all **OWASP LLM Top 10** categories plus advanced AI attacks!
+Autoagenix Labs features **33 comprehensive challenges** covering all **OWASP LLM Top 10** categories plus advanced AI attacks!
 
 ### 📊 Challenge Statistics
 
@@ -302,9 +302,9 @@ For detailed exploitation techniques, see [CHALLENGES_WALKTHROUGH.md](CHALLENGES
 |----------|-------------|
 | [CHALLENGES_WALKTHROUGH.md](CHALLENGES_WALKTHROUGH.md) | **⭐ Complete exploitation guide for all 33 challenges** |
 | [VULNERABILITY_ARCHITECTURE.md](VULNERABILITY_ARCHITECTURE.md) | **Technical vulnerability mapping across services** |
-| [AIHEM_Project_Plan.md](AIHEM_Project_Plan.md) | Complete project strategy |
-| [AIHEM_Implementation_Guide.md](AIHEM_Implementation_Guide.md) | Technical implementation details |
-| [AIHEM_Security_Researcher_Guide.md](AIHEM_Security_Researcher_Guide.md) | Attack methodologies & research |
+| [Autoagenix_Labs_Project_Plan.md](Autoagenix_Labs_Project_Plan.md) | Complete project strategy |
+| [Autoagenix_Labs_Implementation_Guide.md](Autoagenix_Labs_Implementation_Guide.md) | Technical implementation details |
+| [Autoagenix_Labs_Security_Researcher_Guide.md](Autoagenix_Labs_Security_Researcher_Guide.md) | Attack methodologies & research |
 
 ---
 
@@ -329,7 +329,7 @@ Data Stores             Monitoring              ├─ Model Registry :8005
 
 ## 🤝 Contributing
 
-We welcome contributions to AIHEM! Whether you're fixing bugs, adding features, or creating new challenges, your help is appreciated.
+We welcome contributions to Autoagenix Labs! Whether you're fixing bugs, adding features, or creating new challenges, your help is appreciated.
 
 ### How to Contribute
 

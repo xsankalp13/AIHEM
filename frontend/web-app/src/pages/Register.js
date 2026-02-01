@@ -74,7 +74,7 @@ const Register = () => {
             Create Account
           </h1>
           <p style={{ color: '#a0a0a0', fontSize: '14px' }}>
-            Join AIHEM and start learning AI security
+            Join Autoagenix Labs and start learning AI security
           </p>
         </div>
 

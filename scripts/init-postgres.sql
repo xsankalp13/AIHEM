@@ -1,4 +1,4 @@
--- AIHEM PostgreSQL Initialization Script
+-- Autoagenix Labs PostgreSQL Initialization Script
 -- This script creates the necessary database schema and loads sample vulnerable data
 
 -- Users table
@@ -82,9 +82,9 @@ CREATE TABLE IF NOT EXISTS user_challenges (
 
 -- Insert default vulnerable users (passwords are MD5 hashed)
 INSERT INTO users (username, email, password, role, api_key) VALUES
-    ('admin', 'admin@aihem.dev', '5f4dcc3b5aa765d61d8327deb882cf99', 'admin', 'admin_api_key_123'),
-    ('user1', 'user1@aihem.dev', '5f4dcc3b5aa765d61d8327deb882cf99', 'user', 'user1_api_key_456'),
-    ('hacker', 'hacker@aihem.dev', '0b4e7a0e5fe84ad35fb5f95b9ceeac79', 'user', 'hacker_api_key_789')
+    ('admin', 'admin@autoagenix.dev', '5f4dcc3b5aa765d61d8327deb882cf99', 'admin', 'admin_api_key_123'),
+    ('user1', 'user1@autoagenix.dev', '5f4dcc3b5aa765d61d8327deb882cf99', 'user', 'user1_api_key_456'),
+    ('hacker', 'hacker@autoagenix.dev', '0b4e7a0e5fe84ad35fb5f95b9ceeac79', 'user', 'hacker_api_key_789')
 ON CONFLICT (username) DO NOTHING;
 
 -- Insert sensitive chat logs for data extraction challenges
@@ -131,13 +131,13 @@ CREATE INDEX IF NOT EXISTS idx_user_challenges_user_id ON user_challenges(user_i
 CREATE INDEX IF NOT EXISTS idx_sessions_user_id ON sessions(user_id);
 
 -- Grant permissions (adjust as needed for your security requirements)
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO aihem;
-GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO aihem;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO autoagenix;
+GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO autoagenix;
 
 -- Success message
 DO $$
 BEGIN
-    RAISE NOTICE '✅ AIHEM database initialized successfully!';
+    RAISE NOTICE '✅ Autoagenix Labs database initialized successfully!';
     RAISE NOTICE '⚠️  WARNING: This database contains intentionally vulnerable data for educational purposes.';
     RAISE NOTICE '📊 Loaded % users, % challenges, % chat logs',
         (SELECT COUNT(*) FROM users),

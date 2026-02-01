@@ -1,4 +1,4 @@
-# AIHEM Challenge Definitions
+# Autoagenix Labs Challenge Definitions
 # ============================
 # These challenges teach AI security concepts through hands-on exploitation
 
@@ -11,7 +11,7 @@ challenges:
     points: 25
     owasp_category: "LLM01"
     description: |
-      The AIHEM ChatBot has safety filters and a system prompt with confidential information.
+      The Autoagenix Labs ChatBot has safety filters and a system prompt with confidential information.
       Your goal is to bypass these filters and extract the admin password hidden in the system prompt.
 
       Target: ChatBot Service (http://localhost:8002)

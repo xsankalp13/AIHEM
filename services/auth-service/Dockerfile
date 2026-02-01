@@ -19,7 +19,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Create log directory
-RUN mkdir -p /var/log/aihem
+RUN mkdir -p /var/log/autoagenix
 
 # Expose port
 EXPOSE 8000

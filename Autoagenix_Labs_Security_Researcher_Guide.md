@@ -1,8 +1,8 @@
-# AIHEM Security Researcher's Guide
+# Autoagenix Labs Security Researcher's Guide
 
-## How to Approach AI Security Testing on AIHEM
+## How to Approach AI Security Testing on Autoagenix Labs
 
-This guide provides methodologies and techniques for discovering and exploiting AI vulnerabilities in the AIHEM platform. It's designed for security researchers, students, and professionals looking to understand AI security through hands-on practice.
+This guide provides methodologies and techniques for discovering and exploiting AI vulnerabilities in the Autoagenix Labs platform. It's designed for security researchers, students, and professionals looking to understand AI security through hands-on practice.
 
 ---
 
@@ -496,7 +496,7 @@ class MultiVectorAttack:
 import asyncio
 import aiohttp
 
-class AIHEMScanner:
+class AutoagenixLabsScanner:
     def __init__(self, base_url):
         self.base_url = base_url
         self.vulnerabilities = []
@@ -544,7 +544,7 @@ class AIHEMScanner:
         return self.vulnerabilities
 
 # Usage
-scanner = AIHEMScanner("http://localhost:8080")
+scanner = AutoagenixLabsScanner("http://localhost:8080")
 vulns = asyncio.run(scanner.run_scan())
 print(f"Found {len(vulns)} vulnerabilities:")
 for vuln in vulns:
@@ -686,7 +686,7 @@ solution:
 ## Best Practices
 
 ### Ethical Considerations
-- Only test on AIHEM or systems you own
+- Only test on Autoagenix Labs or systems you own
 - Never use these techniques on production systems
 - Report real vulnerabilities responsibly
 - Share knowledge to improve security
@@ -702,7 +702,7 @@ solution:
 - Keep detailed notes of attempts
 - Document successful exploits
 - Share findings with community
-- Contribute improvements to AIHEM
+- Contribute improvements to Autoagenix Labs
 
 ---
 
@@ -721,7 +721,7 @@ solution:
 - Responsible AI Security Research
 
 ### Community
-- AIHEM Discord Server
+- Autoagenix Labs Discord Server
 - AI Security Research Forum
 - Bug Bounty Programs for AI
 - Conference Talks & Papers
@@ -730,10 +730,10 @@ solution:
 
 ## Conclusion
 
-This guide provides a foundation for AI security research on AIHEM. Remember that the goal is education and improving AI security for everyone. Each vulnerability you discover and exploit helps build more secure AI systems.
+This guide provides a foundation for AI security research on Autoagenix Labs. Remember that the goal is education and improving AI security for everyone. Each vulnerability you discover and exploit helps build more secure AI systems.
 
 Happy hacking, and remember to use these skills responsibly! 🎯
 
 ---
 
-*For questions or contributions, join our Discord or submit a pull request to the AIHEM repository.*
+*For questions or contributions, join our Discord or submit a pull request to the Autoagenix Labs repository.*

@@ -110,7 +110,7 @@ const Home = () => {
               marginBottom: '3rem',
               lineHeight: 1.8
             }}>
-              AIHEM is the comprehensive platform for learning AI/LLM security vulnerabilities.
+              Autoagenix Labs is the comprehensive platform for learning AI/LLM security vulnerabilities.
               <br />
               Practice real-world attacks in a safe, gamified environment.
             </p>
@@ -220,7 +220,7 @@ const Home = () => {
               marginBottom: '1rem',
               color: '#fff'
             }}>
-              What Makes AIHEM Special?
+              What Makes Autoagenix Labs Special?
             </h2>
             <p style={{
               fontSize: '1.125rem',
@@ -371,7 +371,7 @@ const Home = () => {
                 gap: '0.5rem'
               }}>
                 <span style={{ fontSize: '2rem' }}>🛡️</span>
-                AIHEM
+                Autoagenix Labs
               </div>
               <p style={{ color: '#a0a0a0', fontSize: '14px', lineHeight: 1.6 }}>
                 The comprehensive platform for learning AI/LLM security vulnerabilities through hands-on exploitation and gamified challenges.
@@ -409,7 +409,7 @@ const Home = () => {
                 Deploy Locally
               </h4>
               <p style={{ color: '#a0a0a0', fontSize: '14px', lineHeight: 1.6, marginBottom: '1rem' }}>
-                Run AIHEM on your own infrastructure for private training sessions with custom leaderboards.
+                Run Autoagenix Labs on your own infrastructure for private training sessions with custom leaderboards.
               </p>
               <div style={{
                 background: '#151515',
@@ -456,7 +456,7 @@ const Home = () => {
             </div>
             <div style={{ display: 'flex', gap: '1.5rem' }}>
               <a
-                href="https://github.com/yourusername/aihem"
+                href="https://github.com/yourusername/autoagenix-labs"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#a0a0a0', fontSize: '14px', textDecoration: 'none', transition: 'color 0.2s' }}

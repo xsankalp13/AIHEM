@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useStore } from '../store/useStore';
 import toast from 'react-hot-toast';
+import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const { isAuthenticated, user, logout } = useStore();
@@ -44,20 +45,7 @@ const Navbar = () => {
             alignItems: 'center',
             gap: '0.75rem'
           }}>
-            <div style={{
-              width: '40px',
-              height: '40px',
-              background: 'linear-gradient(135deg, #00ff88, #00d9ff)',
-              borderRadius: '8px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontWeight: 700,
-              color: '#000',
-              fontSize: '20px'
-            }}>
-              AI
-            </div>
+            <img src={logo} alt="Autoagenix Labs" style={{ height: '40px', borderRadius: '8px' }} />
             <span style={{
               fontSize: '1.5rem',
               fontWeight: 700,
@@ -66,7 +54,7 @@ const Navbar = () => {
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
             }}>
-              AIHEM
+              Autoagenix Labs
             </span>
           </div>
         </Link>

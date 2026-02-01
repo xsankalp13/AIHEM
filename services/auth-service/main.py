@@ -1,5 +1,5 @@
 """
-AIHEM Auth Service - Intentionally Vulnerable Authentication Service
+Autoagenix Labs Auth Service - Intentionally Vulnerable Authentication Service
 =====================================================================
 ⚠️  WARNING: This service contains intentional security vulnerabilities
 ⚠️  FOR EDUCATIONAL USE ONLY - DO NOT USE IN PRODUCTION
@@ -41,7 +41,7 @@ logger = logging.getLogger(__name__)
 
 # Initialize FastAPI
 app = FastAPI(
-    title="AIHEM Auth Service",
+    title="Autoagenix Labs Auth Service",
     description="⚠️ Intentionally Vulnerable Authentication Service for Educational Purposes",
     version="1.0.0",
     docs_url="/docs",
@@ -63,7 +63,7 @@ auth_requests = Counter('auth_requests_total', 'Total authentication requests', 
 auth_duration = Histogram('auth_request_duration_seconds', 'Authentication request duration')
 
 # Configuration (VULNERABILITY: Hardcoded secrets)
-SECRET_KEY = os.getenv("JWT_SECRET", "aihem-secret-key-2024")
+SECRET_KEY = os.getenv("JWT_SECRET", "autoagenix-secret-key-2024")
 ALGORITHM = os.getenv("JWT_ALGORITHM", "HS256")
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24  # 24 hours
 DEBUG_MODE = os.getenv("DEBUG_MODE", "true").lower() == "true"
@@ -118,10 +118,10 @@ def init_db():
 
     # Insert default vulnerable users
     default_users = [
-        ("admin", "admin@aihem.dev", "password", "admin", "admin_api_key_123"),
-        ("user1", "user1@aihem.dev", "password123", "user", "user1_api_key_456"),
-        ("hacker", "hacker@aihem.dev", "letmein", "user", "hacker_api_key_789"),
-        ("test", "test@aihem.dev", "test", "user", "test_api_key_000"),
+        ("admin", "admin@autoagenix.dev", "password", "admin", "admin_api_key_123"),
+        ("user1", "user1@autoagenix.dev", "password123", "user", "user1_api_key_456"),
+        ("hacker", "hacker@autoagenix.dev", "letmein", "user", "hacker_api_key_789"),
+        ("test", "test@autoagenix.dev", "test", "user", "test_api_key_000"),
     ]
 
     for username, email, password, role, api_key in default_users:
@@ -188,7 +188,7 @@ async def startup_event():
 @app.get("/")
 async def root():
     return {
-        "service": "AIHEM Auth Service",
+        "service": "Autoagenix Labs Auth Service",
         "version": "1.0.0",
         "status": "running",
         "warning": "⚠️ This is an intentionally vulnerable service for educational purposes"

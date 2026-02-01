@@ -1,7 +1,7 @@
 version: '3.8'
 
 # ====================================================================
-# AIHEM - AI Hacking Educational Module
+# Autoagenix Labs - AI Hacking Educational Module
 # Docker Compose Configuration
 # ====================================================================
 # ⚠️  WARNING: This stack contains intentionally vulnerable services!
@@ -13,28 +13,28 @@ services:
 
   postgres:
     image: postgres:14-alpine
-    container_name: aihem-postgres
+    container_name: autoagenix-postgres
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-aihem}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-aihem123}
-      POSTGRES_DB: ${POSTGRES_DB:-aihem_db}
+      POSTGRES_USER: ${POSTGRES_USER:-autoagenix}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-autoagenix123}
+      POSTGRES_DB: ${POSTGRES_DB:-autoagenix_db}
     ports:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
       - ../../scripts/init-postgres.sql:/docker-entrypoint-initdb.d/init.sql
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-aihem}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-autoagenix}"]
       interval: 10s
       timeout: 5s
       retries: 5
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
 
   redis:
     image: redis:7-alpine
-    container_name: aihem-redis
+    container_name: autoagenix-redis
     command: redis-server --requirepass ${REDIS_PASSWORD:-redis123} --protected-mode no
     ports:
       - "${REDIS_PORT:-6379}:6379"
@@ -46,12 +46,12 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
 
   mongodb:
     image: mongo:6
-    container_name: aihem-mongodb
+    container_name: autoagenix-mongodb
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:-admin}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:-admin123}
@@ -66,12 +66,12 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
 
   minio:
     image: minio/minio:latest
-    container_name: aihem-minio
+    container_name: autoagenix-minio
     environment:
       MINIO_ROOT_USER: ${MINIO_ROOT_USER:-minioadmin}
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minioadmin123}
@@ -87,7 +87,7 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
 
   # ============= Backend Services =============
@@ -96,11 +96,11 @@ services:
     build:
       context: ../../services/auth-service
       dockerfile: Dockerfile
-    container_name: aihem-auth-service
+    container_name: autoagenix-auth-service
     environment:
-      DATABASE_URL: postgresql://${POSTGRES_USER:-aihem}:${POSTGRES_PASSWORD:-aihem123}@postgres:5432/${POSTGRES_DB:-aihem_db}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-autoagenix}:${POSTGRES_PASSWORD:-autoagenix123}@postgres:5432/${POSTGRES_DB:-autoagenix_db}
       REDIS_URL: redis://default:${REDIS_PASSWORD:-redis123}@redis:6379
-      JWT_SECRET: ${JWT_SECRET:-aihem-secret-key-2024}
+      JWT_SECRET: ${JWT_SECRET:-autoagenix-secret-key-2024}
       JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
       DEBUG_MODE: ${REACT_APP_DEBUG_MODE:-true}
       CORS_ALLOW_ALL: ${CORS_ALLOW_ALL:-true}
@@ -113,20 +113,20 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
     volumes:
-      - ./logs/auth:/var/log/aihem
+      - ./logs/auth:/var/log/autoagenix
 
   chatbot-service:
     build:
       context: ../../services/chatbot-service
       dockerfile: Dockerfile
-    container_name: aihem-chatbot-service
+    container_name: autoagenix-chatbot-service
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY}
       ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
-      DATABASE_URL: postgresql://${POSTGRES_USER:-aihem}:${POSTGRES_PASSWORD:-aihem123}@postgres:5432/${POSTGRES_DB:-aihem_db}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-autoagenix}:${POSTGRES_PASSWORD:-autoagenix123}@postgres:5432/${POSTGRES_DB:-autoagenix_db}
       REDIS_URL: redis://default:${REDIS_PASSWORD:-redis123}@redis:6379
       ALLOW_SYSTEM_PROMPT_OVERRIDE: ${ALLOW_SYSTEM_PROMPT_OVERRIDE:-true}
       ALLOW_CODE_EXECUTION: ${ALLOW_CODE_EXECUTION:-true}
@@ -141,22 +141,22 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
     volumes:
-      - ./logs/chatbot:/var/log/aihem
+      - ./logs/chatbot:/var/log/autoagenix
 
   rag-service:
     build:
       context: ../../services/rag-service
       dockerfile: Dockerfile
-    container_name: aihem-rag-service
+    container_name: autoagenix-rag-service
     environment:
       LOG_LEVEL: ${LOG_LEVEL:-INFO}
     ports:
       - "${RAG_SERVICE_PORT:-8003}:8000"
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health', timeout=5)"]
@@ -169,10 +169,10 @@ services:
     build:
       context: ../../services/agent-service
       dockerfile: Dockerfile
-    container_name: aihem-agent-service
+    container_name: autoagenix-agent-service
     environment:
       OPENAI_API_KEY: ${OPENAI_API_KEY}
-      DATABASE_URL: postgresql://${POSTGRES_USER:-aihem}:${POSTGRES_PASSWORD:-aihem123}@postgres:5432/${POSTGRES_DB:-aihem_db}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-autoagenix}:${POSTGRES_PASSWORD:-autoagenix123}@postgres:5432/${POSTGRES_DB:-autoagenix_db}
       REDIS_URL: redis://default:${REDIS_PASSWORD:-redis123}@redis:6379
       ALLOW_CODE_EXECUTION: ${ALLOW_CODE_EXECUTION:-true}
       TOOL_RESTRICTIONS_ENABLED: ${TOOL_RESTRICTIONS_ENABLED:-false}
@@ -187,10 +187,10 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
     volumes:
-      - ./logs/agent:/var/log/aihem
+      - ./logs/agent:/var/log/autoagenix
       # VULNERABILITY: Docker socket access for agent challenges
       - /var/run/docker.sock:/var/run/docker.sock
 
@@ -198,12 +198,12 @@ services:
     build:
       context: ../../services/model-registry
       dockerfile: Dockerfile
-    container_name: aihem-model-registry
+    container_name: autoagenix-model-registry
     environment:
       MINIO_ENDPOINT: ${MINIO_ENDPOINT:-minio:9000}
       MINIO_ACCESS_KEY: ${MINIO_ROOT_USER:-minioadmin}
       MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minioadmin123}
-      DATABASE_URL: postgresql://${POSTGRES_USER:-aihem}:${POSTGRES_PASSWORD:-aihem123}@postgres:5432/${POSTGRES_DB:-aihem_db}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-autoagenix}:${POSTGRES_PASSWORD:-autoagenix123}@postgres:5432/${POSTGRES_DB:-autoagenix_db}
       ALLOW_PICKLE_MODELS: ${ALLOW_PICKLE_MODELS:-true}
       SIGNATURE_VERIFICATION: ${SIGNATURE_VERIFICATION:-false}
       LOG_LEVEL: ${LOG_LEVEL:-DEBUG}
@@ -215,18 +215,18 @@ services:
       minio:
         condition: service_healthy
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
     volumes:
-      - ./logs/model-registry:/var/log/aihem
+      - ./logs/model-registry:/var/log/autoagenix
 
   challenge-validator:
     build:
       context: ../../services/challenge-validator
       dockerfile: Dockerfile
-    container_name: aihem-challenge-validator
+    container_name: autoagenix-challenge-validator
     environment:
-      DATABASE_URL: postgresql://${POSTGRES_USER:-aihem}:${POSTGRES_PASSWORD:-aihem123}@postgres:5432/${POSTGRES_DB:-aihem_db}
+      DATABASE_URL: postgresql://${POSTGRES_USER:-autoagenix}:${POSTGRES_PASSWORD:-autoagenix123}@postgres:5432/${POSTGRES_DB:-autoagenix_db}
       REDIS_URL: redis://default:${REDIS_PASSWORD:-redis123}@redis:6379
       LOG_LEVEL: ${LOG_LEVEL:-DEBUG}
     ports:
@@ -237,17 +237,17 @@ services:
       redis:
         condition: service_healthy
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
     volumes:
       - ../../challenges:/app/challenges:ro
-      - ./logs/validator:/var/log/aihem
+      - ./logs/validator:/var/log/autoagenix
 
   # ============= API Gateway =============
 
   kong:
     image: kong:3.4
-    container_name: aihem-kong
+    container_name: autoagenix-kong
     environment:
       KONG_DATABASE: "off"
       KONG_DECLARATIVE_CONFIG: /kong/declarative/kong.yml
@@ -269,7 +269,7 @@ services:
       timeout: 5s
       retries: 5
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
     depends_on:
       - auth-service
@@ -285,7 +285,7 @@ services:
     build:
       context: ../../frontend/web-app
       dockerfile: Dockerfile
-    container_name: aihem-frontend
+    container_name: autoagenix-frontend
     environment:
       REACT_APP_API_URL: ${REACT_APP_API_URL:-http://localhost:8080}
       REACT_APP_WS_URL: ${REACT_APP_WS_URL:-ws://localhost:8080}
@@ -293,7 +293,7 @@ services:
     ports:
       - "${FRONTEND_PORT:-3000}:3000"
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
     depends_on:
       - kong
@@ -302,7 +302,7 @@ services:
   #   build:
   #     context: ../../frontend/hackpad
   #     dockerfile: Dockerfile
-  #   container_name: aihem-hackpad
+  #   container_name: autoagenix-hackpad
   #   environment:
   #     REACT_APP_API_URL: ${REACT_APP_API_URL:-http://localhost:8080}
   #     REACT_APP_WS_URL: ${REACT_APP_WS_URL:-ws://localhost:8080}
@@ -310,7 +310,7 @@ services:
   #   ports:
   #     - "${HACKPAD_PORT:-3001}:3000"
   #   networks:
-  #     - aihem-network
+  #     - autoagenix-network
   #   restart: unless-stopped
   #   depends_on:
   #     - kong
@@ -319,14 +319,14 @@ services:
   #   build:
   #     context: ../../frontend/admin-panel
   #     dockerfile: Dockerfile
-  #   container_name: aihem-admin-panel
+  #   container_name: autoagenix-admin-panel
   #   environment:
   #     REACT_APP_API_URL: ${REACT_APP_API_URL:-http://localhost:8080}
   #     REACT_APP_ADMIN_KEY: ${ADMIN_API_KEY:-admin123}
   #   ports:
   #     - "${ADMIN_PANEL_PORT:-3002}:3000"
   #   networks:
-  #     - aihem-network
+  #     - autoagenix-network
   #   restart: unless-stopped
   #   depends_on:
   #     - kong
@@ -335,7 +335,7 @@ services:
 
   prometheus:
     image: prom/prometheus:latest
-    container_name: aihem-prometheus
+    container_name: autoagenix-prometheus
     command:
       - '--config.file=/etc/prometheus/prometheus.yml'
       - '--storage.tsdb.path=/prometheus'
@@ -347,12 +347,12 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
       - prometheus_data:/prometheus
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
 
   grafana:
     image: grafana/grafana:latest
-    container_name: aihem-grafana
+    container_name: autoagenix-grafana
     environment:
       GF_SECURITY_ADMIN_USER: ${GRAFANA_ADMIN_USER:-admin}
       GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_ADMIN_PASSWORD:-admin}
@@ -365,7 +365,7 @@ services:
       - grafana_data:/var/lib/grafana
       - ./grafana-dashboards:/etc/grafana/provisioning/dashboards:ro
     networks:
-      - aihem-network
+      - autoagenix-network
     restart: unless-stopped
     depends_on:
       - prometheus
@@ -373,7 +373,7 @@ services:
 # ============= Networks =============
 
 networks:
-  aihem-network:
+  autoagenix-network:
     driver: bridge
     ipam:
       config:

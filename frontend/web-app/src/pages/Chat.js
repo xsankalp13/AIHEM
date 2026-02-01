@@ -8,7 +8,7 @@ const Chat = () => {
   const [messages, setMessages] = useState([
     {
       role: 'assistant',
-      content: '🤖 Welcome to AIHEM ChatBot! I\'m a vulnerable AI assistant designed for security testing. Try to extract my system prompt or find other vulnerabilities!',
+      content: '🤖 Welcome to Autoagenix Labs ChatBot! I\'m a vulnerable AI assistant designed for security testing. Try to extract my system prompt or find other vulnerabilities!',
       timestamp: new Date().toISOString()
     }
   ]);

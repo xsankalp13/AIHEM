@@ -2,7 +2,7 @@ _format_version: "3.0"
 _transform: true
 
 # ====================================================================
-# AIHEM - Kong API Gateway Configuration
+# Autoagenix Labs - Kong API Gateway Configuration
 # ====================================================================
 # This configuration contains intentional vulnerabilities for education
 # ====================================================================
@@ -154,11 +154,11 @@ consumers:
 jwt_secrets:
   - consumer: admin
     key: admin-jwt-key
-    secret: aihem-secret-key-2024  # VULNERABILITY: Hardcoded secret
+    secret: autoagenix-secret-key-2024  # VULNERABILITY: Hardcoded secret
     algorithm: HS256
   - consumer: hacker
     key: hacker-jwt-key
-    secret: aihem-secret-key-2024  # Same secret - VULNERABILITY
+    secret: autoagenix-secret-key-2024  # Same secret - VULNERABILITY
     algorithm: HS256
 
 # Key Auth (for API key challenges)
