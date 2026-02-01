@@ -197,7 +197,7 @@ const Chat = () => {
               fontSize: '2rem',
               fontWeight: 700,
               marginBottom: '0.5rem',
-              background: 'linear-gradient(135deg, #ff006e, #00ff88)',
+              background: 'linear-gradient(135deg, #ff006e, #ff0055)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent'
             }}>
@@ -213,10 +213,10 @@ const Chat = () => {
               onClick={() => setShowGuidance(!showGuidance)}
               style={{
                 padding: '0.5rem 1rem',
-                background: showGuidance ? '#00d9ff' : 'transparent',
-                border: '1px solid #00d9ff',
+                background: showGuidance ? '#bf00ff' : 'transparent',
+                border: '1px solid #bf00ff',
                 borderRadius: '6px',
-                color: showGuidance ? '#000' : '#00d9ff',
+                color: showGuidance ? '#000' : '#bf00ff',
                 fontSize: '12px',
                 cursor: 'pointer',
                 fontWeight: 600
@@ -228,10 +228,10 @@ const Chat = () => {
               onClick={() => setShowAdvanced(!showAdvanced)}
               style={{
                 padding: '0.5rem 1rem',
-                background: showAdvanced ? '#00ff88' : 'transparent',
-                border: '1px solid #00ff88',
+                background: showAdvanced ? '#ff0055' : 'transparent',
+                border: '1px solid #ff0055',
                 borderRadius: '6px',
-                color: showAdvanced ? '#000' : '#00ff88',
+                color: showAdvanced ? '#000' : '#ff0055',
                 fontSize: '12px',
                 cursor: 'pointer',
                 fontWeight: 600
@@ -268,7 +268,7 @@ const Chat = () => {
                 maxWidth: '1400px',
                 margin: '1rem auto 0 auto',
                 background: 'linear-gradient(135deg, #1a1a2e, #16213e)',
-                border: '2px solid #00d9ff',
+                border: '2px solid #bf00ff',
                 borderRadius: '12px',
                 padding: '1.5rem',
                 boxShadow: '0 0 20px rgba(0, 217, 255, 0.2)'
@@ -276,20 +276,20 @@ const Chat = () => {
             >
               <div style={{ display: 'flex', alignItems: 'center', marginBottom: '1rem' }}>
                 <span style={{ fontSize: '1.5rem', marginRight: '0.75rem' }}>📚</span>
-                <h3 style={{ color: '#00d9ff', fontSize: '1.25rem', fontWeight: 700, margin: 0 }}>
+                <h3 style={{ color: '#bf00ff', fontSize: '1.25rem', fontWeight: 700, margin: 0 }}>
                   Learning Guide: Vulnerable ChatBot
                 </h3>
               </div>
 
               <div style={{ color: '#e0e0e0', fontSize: '14px', lineHeight: 1.8, marginBottom: '1rem' }}>
                 <p style={{ marginBottom: '1rem' }}>
-                  <strong style={{ color: '#00ff88' }}>What is this?</strong> This is an intentionally vulnerable AI chatbot designed for security testing and learning.
+                  <strong style={{ color: '#ff0055' }}>What is this?</strong> This is an intentionally vulnerable AI chatbot designed for security testing and learning.
                   It contains multiple OWASP LLM Top 10 vulnerabilities that you can exploit.
                 </p>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem', marginBottom: '1rem' }}>
-                  <div style={{ background: 'rgba(0, 255, 136, 0.1)', padding: '1rem', borderRadius: '8px', border: '1px solid rgba(0, 255, 136, 0.3)' }}>
-                    <div style={{ color: '#00ff88', fontWeight: 700, marginBottom: '0.5rem' }}>🎯 Prompt Injection (LLM01)</div>
+                  <div style={{ background: 'rgba(255, 0, 85, 0.1)', padding: '1rem', borderRadius: '8px', border: '1px solid rgba(255, 0, 85, 0.3)' }}>
+                    <div style={{ color: '#ff0055', fontWeight: 700, marginBottom: '0.5rem' }}>🎯 Prompt Injection (LLM01)</div>
                     <div style={{ fontSize: '13px', color: '#b0b0b0' }}>
                       Try to extract the system prompt containing passwords and API keys. Use techniques like:
                       <ul style={{ marginLeft: '1rem', marginTop: '0.5rem' }}>
@@ -315,7 +315,7 @@ const Chat = () => {
                   </div>
 
                   <div style={{ background: 'rgba(0, 217, 255, 0.1)', padding: '1rem', borderRadius: '8px', border: '1px solid rgba(0, 217, 255, 0.3)' }}>
-                    <div style={{ color: '#00d9ff', fontWeight: 700, marginBottom: '0.5rem' }}>📊 Data Leakage (LLM02)</div>
+                    <div style={{ color: '#bf00ff', fontWeight: 700, marginBottom: '0.5rem' }}>📊 Data Leakage (LLM02)</div>
                     <div style={{ fontSize: '13px', color: '#b0b0b0' }}>
                       <strong>NEW!</strong> Share sensitive info in one session, then login as another user and ask the bot about it. The bot leaks data across users!
                     </div>
@@ -323,7 +323,7 @@ const Chat = () => {
                 </div>
 
                 <div style={{ background: '#1a1a1a', padding: '1rem', borderRadius: '8px', border: '1px solid #2a2a2a' }}>
-                  <strong style={{ color: '#00ff88' }}>💡 Quick Tips:</strong>
+                  <strong style={{ color: '#ff0055' }}>💡 Quick Tips:</strong>
                   <ul style={{ marginLeft: '1.5rem', marginTop: '0.5rem', color: '#b0b0b0' }}>
                     <li>The system prompt contains hardcoded passwords, API keys, and database credentials</li>
                     <li>Try different model selections to see how they respond to attacks</li>
@@ -469,8 +469,8 @@ const Chat = () => {
                         transition: 'all 0.2s'
                       }}
                       onMouseOver={(e) => {
-                        e.target.style.borderColor = '#00ff88';
-                        e.target.style.color = '#00ff88';
+                        e.target.style.borderColor = '#ff0055';
+                        e.target.style.color = '#ff0055';
                       }}
                       onMouseOut={(e) => {
                         e.target.style.borderColor = '#2a2a2a';
@@ -512,7 +512,7 @@ const Chat = () => {
               <div style={{
                 maxWidth: '80%',
                 background: message.role === 'user' 
-                  ? 'linear-gradient(135deg, #00ff88, #00d9ff)' 
+                  ? 'linear-gradient(135deg, #ff0055, #bf00ff)'
                   : message.isError 
                     ? '#2a1a1a' 
                     : '#151515',
@@ -547,7 +547,7 @@ const Chat = () => {
                 {/* Debug Info */}
                 {message.debug_info && (
                   <details style={{ marginTop: '1rem', fontSize: '11px', opacity: 0.7 }}>
-                    <summary style={{ cursor: 'pointer', color: '#00ff88' }}>🔍 Debug Info</summary>
+                    <summary style={{ cursor: 'pointer', color: '#ff0055' }}>🔍 Debug Info</summary>
                     <pre style={{ 
                       background: '#0a0a0a', 
                       padding: '0.5rem', 
@@ -566,7 +566,7 @@ const Chat = () => {
                     marginTop: '1rem', 
                     padding: '0.5rem', 
                     background: message.execution_result.executed ? '#1a2a1a' : '#2a1a1a',
-                    border: `1px solid ${message.execution_result.executed ? '#00ff88' : '#ff006e'}`,
+                    border: `1px solid ${message.execution_result.executed ? '#ff0055' : '#ff006e'}`,
                     borderRadius: '4px',
                     fontSize: '12px'
                   }}>
@@ -658,7 +658,7 @@ const Chat = () => {
                   outline: 'none',
                   fontFamily: 'inherit'
                 }}
-                onFocus={(e) => e.target.style.borderColor = '#00ff88'}
+                onFocus={(e) => e.target.style.borderColor = '#ff0055'}
                 onBlur={(e) => e.target.style.borderColor = '#2a2a2a'}
               />
             </div>
@@ -671,7 +671,7 @@ const Chat = () => {
                 padding: '1rem 2rem',
                 background: isLoading || !inputMessage.trim() || !isConnected 
                   ? '#2a2a2a' 
-                  : 'linear-gradient(135deg, #00ff88, #00d9ff)',
+                  : 'linear-gradient(135deg, #ff0055, #bf00ff)',
                 border: 'none',
                 borderRadius: '12px',
                 color: isLoading || !inputMessage.trim() || !isConnected ? '#666' : '#000',
@@ -706,7 +706,7 @@ const Chat = () => {
         .typing-indicator span {
           width: 4px;
           height: 4px;
-          background: #00ff88;
+          background: #ff0055;
           border-radius: 50%;
           animation: typing 1.4s infinite ease-in-out;
         }

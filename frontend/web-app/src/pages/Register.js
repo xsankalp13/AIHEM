@@ -67,7 +67,7 @@ const Register = () => {
             fontSize: '2rem',
             fontWeight: 700,
             marginBottom: '0.5rem',
-            background: 'linear-gradient(135deg, #00ff88, #00d9ff)',
+            background: 'linear-gradient(135deg, #ff0055, #bf00ff)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
@@ -168,14 +168,14 @@ const Register = () => {
           </div>
 
           <motion.button
-            whileHover={{ scale: 1.02, boxShadow: '0 0 20px rgba(0, 255, 136, 0.4)' }}
+            whileHover={{ scale: 1.02, boxShadow: '0 0 20px rgba(255, 0, 85, 0.4)' }}
             whileTap={{ scale: 0.98 }}
             type="submit"
             disabled={loading}
             style={{
               width: '100%',
               padding: '1rem',
-              background: '#00ff88',
+              background: '#ff0055',
               border: 'none',
               borderRadius: '8px',
               color: '#000',
@@ -194,7 +194,7 @@ const Register = () => {
           <div style={{ textAlign: 'center', padding: '1.5rem 0', borderTop: '1px solid #2a2a2a', marginTop: '1.5rem' }}>
             <p style={{ color: '#a0a0a0', fontSize: '14px' }}>
               Already have an account?{' '}
-              <Link to="/login" style={{ color: '#00ff88', textDecoration: 'none', fontWeight: 600 }}>
+              <Link to="/login" style={{ color: '#ff0055', textDecoration: 'none', fontWeight: 600 }}>
                 Login here
               </Link>
             </p>

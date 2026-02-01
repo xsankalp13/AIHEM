@@ -22,12 +22,12 @@ This project adheres to a Code of Conduct that all contributors are expected to 
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/Autoagenix Labs.git
+   git clone https://github.com/YOUR_USERNAME/autoagenix-labs.git
    cd Autoagenix Labs
    ```
 3. **Add the upstream remote**:
    ```bash
-   git remote add upstream https://github.com/JBAhire/Autoagenix Labs.git
+   git remote add upstream https://github.com/JBAhire/autoagenix-labs.git
    ```
 4. **Create a branch** for your changes:
    ```bash

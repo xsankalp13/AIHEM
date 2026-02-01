@@ -49,7 +49,7 @@ const Navbar = () => {
             <span style={{
               fontSize: '1.5rem',
               fontWeight: 700,
-              background: 'linear-gradient(135deg, #00ff88, #00d9ff)',
+              background: 'linear-gradient(135deg, #ff0055, #bf00ff)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
@@ -80,7 +80,7 @@ const Navbar = () => {
                   letterSpacing: '1px',
                   transition: 'all 0.3s ease',
                 }}
-                onMouseEnter={(e) => e.target.style.color = '#00ff88'}
+                onMouseEnter={(e) => e.target.style.color = '#ff0055'}
                 onMouseLeave={(e) => e.target.style.color = '#a0a0a0'}
               >
                 {link.label}
@@ -97,7 +97,7 @@ const Navbar = () => {
                 padding: '0.5rem 1rem',
                 background: '#1f1f1f',
                 borderRadius: '8px',
-                color: '#00ff88',
+                color: '#ff0055',
                 fontSize: '14px',
                 fontWeight: 600
               }}>
@@ -108,9 +108,9 @@ const Navbar = () => {
                 style={{
                   padding: '0.75rem 1.5rem',
                   background: 'transparent',
-                  border: '2px solid #00ff88',
+                  border: '2px solid #ff0055',
                   borderRadius: '8px',
-                  color: '#00ff88',
+                  color: '#ff0055',
                   fontWeight: 600,
                   fontSize: '14px',
                   cursor: 'pointer',
@@ -119,12 +119,12 @@ const Navbar = () => {
                   transition: 'all 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.background = '#00ff88';
+                  e.target.style.background = '#ff0055';
                   e.target.style.color = '#000';
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.background = 'transparent';
-                  e.target.style.color = '#00ff88';
+                  e.target.style.color = '#ff0055';
                 }}
               >
                 Logout
@@ -136,9 +136,9 @@ const Navbar = () => {
                 <button style={{
                   padding: '0.75rem 1.5rem',
                   background: 'transparent',
-                  border: '2px solid #00ff88',
+                  border: '2px solid #ff0055',
                   borderRadius: '8px',
-                  color: '#00ff88',
+                  color: '#ff0055',
                   fontWeight: 600,
                   fontSize: '14px',
                   cursor: 'pointer',
@@ -151,7 +151,7 @@ const Navbar = () => {
               <Link to="/register">
                 <button style={{
                   padding: '0.75rem 1.5rem',
-                  background: '#00ff88',
+                  background: '#ff0055',
                   border: 'none',
                   borderRadius: '8px',
                   color: '#000',
@@ -160,7 +160,7 @@ const Navbar = () => {
                   cursor: 'pointer',
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
-                  boxShadow: '0 0 20px rgba(0, 255, 136, 0.3)'
+                  boxShadow: '0 0 20px rgba(255, 0, 85, 0.3)'
                 }}>
                   Register
                 </button>

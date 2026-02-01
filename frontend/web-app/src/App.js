@@ -39,13 +39,13 @@ function App() {
           style: {
             background: '#151515',
             color: '#fff',
-            border: '1px solid #00ff88',
+            border: '1px solid #ff0055',
             padding: '16px',
             borderRadius: '8px',
           },
           success: {
             iconTheme: {
-              primary: '#00ff88',
+              primary: '#ff0055',
               secondary: '#151515',
             },
           },

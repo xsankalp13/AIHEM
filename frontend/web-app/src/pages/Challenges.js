@@ -55,11 +55,11 @@ const Challenges = () => {
 
   const getDifficultyColor = (difficulty) => {
     const colors = {
-      easy: '#00ff88',
+      easy: '#ff0055',
       medium: '#ffbe0b',
       hard: '#ff006e'
     };
-    return colors[difficulty?.toLowerCase()] || '#00ff88';
+    return colors[difficulty?.toLowerCase()] || '#ff0055';
   };
 
   const getOwaspColor = (owaspCategory) => {
@@ -189,7 +189,7 @@ const Challenges = () => {
             fontSize: '3rem',
             fontWeight: 700,
             marginBottom: '1rem',
-            background: 'linear-gradient(135deg, #00ff88, #00d9ff)',
+            background: 'linear-gradient(135deg, #ff0055, #bf00ff)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
@@ -212,13 +212,13 @@ const Challenges = () => {
             }}>
               <div>
                 <span style={{ color: '#a0a0a0', fontSize: '14px' }}>Total Score: </span>
-                <span style={{ color: '#00ff88', fontSize: '20px', fontWeight: 700 }}>
+                <span style={{ color: '#ff0055', fontSize: '20px', fontWeight: 700 }}>
                   {userProgress.reduce((sum, p) => sum + p.points, 0)} pts
                 </span>
               </div>
               <div>
                 <span style={{ color: '#a0a0a0', fontSize: '14px' }}>Solved: </span>
-                <span style={{ color: '#00d9ff', fontSize: '16px', fontWeight: 600 }}>
+                <span style={{ color: '#bf00ff', fontSize: '16px', fontWeight: 600 }}>
                   {userProgress.length} / {challenges.length}
                 </span>
               </div>
@@ -239,7 +239,7 @@ const Challenges = () => {
               onClick={() => setFilter('all')}
               style={{
                 padding: '0.75rem 1.5rem',
-                background: filter === 'all' ? '#00ff88' : 'transparent',
+                background: filter === 'all' ? '#ff0055' : 'transparent',
                 border: filter === 'all' ? 'none' : '2px solid #2a2a2a',
                 borderRadius: '8px',
                 color: filter === 'all' ? '#000' : '#a0a0a0',
@@ -258,7 +258,7 @@ const Challenges = () => {
                 onClick={() => setFilter(category)}
                 style={{
                   padding: '0.75rem 1.5rem',
-                  background: filter === category ? '#00ff88' : 'transparent',
+                  background: filter === category ? '#ff0055' : 'transparent',
                   border: filter === category ? 'none' : '2px solid #2a2a2a',
                   borderRadius: '8px',
                   color: filter === category ? '#000' : '#a0a0a0',
@@ -323,7 +323,7 @@ const Challenges = () => {
                   whileHover={{ y: -8, borderColor: getDifficultyColor(challenge.difficulty) }}
                   style={{
                     background: isSolved ? 'linear-gradient(135deg, #1a2a1a, #151515)' : '#151515',
-                    border: `2px solid ${isSolved ? '#00ff88' : '#2a2a2a'}`,
+                    border: `2px solid ${isSolved ? '#ff0055' : '#2a2a2a'}`,
                     borderRadius: '16px',
                     padding: '2rem',
                     transition: 'all 0.3s ease',
@@ -339,7 +339,7 @@ const Challenges = () => {
                       position: 'absolute',
                       top: '1rem',
                       right: '1rem',
-                      background: '#00ff88',
+                      background: '#ff0055',
                       color: '#000',
                       padding: '0.25rem 0.75rem',
                       borderRadius: '12px',
@@ -410,7 +410,7 @@ const Challenges = () => {
                       padding: '0.75rem 1rem',
                       background: '#1f1f1f',
                       borderRadius: '8px',
-                      color: isSolved ? '#00ff88' : '#fff',
+                      color: isSolved ? '#ff0055' : '#fff',
                       fontWeight: 700,
                       fontSize: '16px',
                       textAlign: 'center',
@@ -725,7 +725,7 @@ const Challenges = () => {
                           padding: '1rem',
                           background: submitting || !submissionData.response_text.trim() 
                             ? '#2a2a2a' 
-                            : 'linear-gradient(135deg, #00ff88, #00d9ff)',
+                            : 'linear-gradient(135deg, #ff0055, #bf00ff)',
                           border: 'none',
                           borderRadius: '8px',
                           color: submitting || !submissionData.response_text.trim() ? '#666' : '#000',

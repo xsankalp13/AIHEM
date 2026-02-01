@@ -53,7 +53,7 @@ Inspired by OWASP's crAPI and WebGoat, Autoagenix Labs provides a safe, realisti
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/JBAhire/Autoagenix Labs.git
+   git clone https://github.com/JBAhire/autoagenix-labs.git
    cd Autoagenix Labs
    ```
 
