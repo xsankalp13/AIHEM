@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to AIHEM will be documented in this file.
+All notable changes to Autoagenix Labs will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -16,7 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2024-01-XX
 
 ### Added
-- Initial release of AIHEM platform
+- Initial release of Autoagenix Labs platform
 - 33 comprehensive AI security challenges covering OWASP LLM Top 10
 - Core services:
   - Authentication service with intentional vulnerabilities
@@ -32,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - GETTING_STARTED.md
   - CHALLENGES_WALKTHROUGH.md
   - VULNERABILITY_ARCHITECTURE.md
-  - AIHEM_Security_Researcher_Guide.md
+  - Autoagenix_Labs_Security_Researcher_Guide.md
 - Challenge categories:
   - Prompt Injection (LLM01) - 6 challenges
   - Insecure Output Handling (LLM02) - 2 challenges

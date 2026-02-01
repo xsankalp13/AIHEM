@@ -1,6 +1,6 @@
 ---
 name: New Challenge Request
-about: Propose a new security challenge for AIHEM
+about: Propose a new security challenge for Autoagenix Labs
 title: '[CHALLENGE] '
 labels: challenge, enhancement
 assignees: ''

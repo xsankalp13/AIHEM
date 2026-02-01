@@ -2,7 +2,7 @@
 
 ## ⚠️ IMPORTANT: This is an Intentionally Vulnerable Platform
 
-**AIHEM is designed to be vulnerable for educational purposes.** The vulnerabilities in this platform are **intentional** and are meant to teach AI security concepts.
+**Autoagenix Labs is designed to be vulnerable for educational purposes.** The vulnerabilities in this platform are **intentional** and are meant to teach AI security concepts.
 
 ## Supported Versions
 
@@ -17,7 +17,7 @@ We provide security updates for the following versions:
 
 ### For Real Security Issues in the Platform Itself
 
-If you discover a **real security vulnerability** in the AIHEM platform itself (not an intentional vulnerability), please report it responsibly:
+If you discover a **real security vulnerability** in the Autoagenix Labs platform itself (not an intentional vulnerability), please report it responsibly:
 
 1. **Do NOT** open a public issue
 2. Email security concerns to: [INSERT SECURITY EMAIL]
@@ -102,7 +102,7 @@ We will notify users about:
 
 We encourage security research on this platform! However:
 
-1. **Stay within scope** - Only test the AIHEM platform itself
+1. **Stay within scope** - Only test the Autoagenix Labs platform itself
 2. **Don't attack infrastructure** - Don't attack hosting, CI/CD, etc.
 3. **Respect privacy** - Don't access other users' data
 4. **Follow responsible disclosure** - Report real issues privately

@@ -1,6 +1,6 @@
 ---
 name: Bug Report
-about: Create a report to help us improve AIHEM
+about: Create a report to help us improve Autoagenix Labs
 title: '[BUG] '
 labels: bug
 assignees: ''

@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Suggest an idea for AIHEM
+about: Suggest an idea for Autoagenix Labs
 title: '[FEATURE] '
 labels: enhancement
 assignees: ''

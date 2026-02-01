@@ -1,4 +1,4 @@
-# AIHEM RAG Service - Lightweight Version
+# Autoagenix Labs RAG Service - Lightweight Version
 
 This is a **simplified, lightweight RAG service** with **zero external dependencies** (no ChromaDB, no MongoDB, no OpenAI).
 
@@ -27,7 +27,7 @@ Before running with Docker, test the service independently:
 
 ```bash
 # 1. Install dependencies
-cd /home/user/AIHEM/services/rag-service
+cd /home/user/Autoagenix Labs/services/rag-service
 pip install -r requirements.txt
 
 # 2. Run the test script
@@ -55,11 +55,11 @@ curl http://localhost:8000/health
 
 ```bash
 # Build the image
-cd /home/user/AIHEM/services/rag-service
-docker build -t aihem-rag-service .
+cd /home/user/Autoagenix Labs/services/rag-service
+docker build -t autoagenix-rag-service .
 
 # Run standalone (no dependencies!)
-docker run -p 8003:8000 aihem-rag-service
+docker run -p 8003:8000 autoagenix-rag-service
 
 # Check logs
 docker logs -f <container_id>
@@ -98,11 +98,11 @@ curl http://localhost:8003/health
 1. **Increase start period** in Dockerfile (already set to 40s)
 2. **Check container logs**:
    ```bash
-   docker logs aihem-rag-service
+   docker logs autoagenix-rag-service
    ```
 3. **Exec into container**:
    ```bash
-   docker exec -it aihem-rag-service bash
+   docker exec -it autoagenix-rag-service bash
    python -c "import requests; print(requests.get('http://localhost:8000/health').json())"
    ```
 

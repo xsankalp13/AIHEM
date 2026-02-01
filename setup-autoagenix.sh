@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# AIHEM Quick Setup Script
-# This script sets up the AIHEM vulnerable AI platform for educational purposes
+# Autoagenix Labs Quick Setup Script
+# This script sets up the Autoagenix Labs vulnerable AI platform for educational purposes
 
 set -e
 
 echo "========================================="
-echo "     AIHEM - AI Hacking Educational Module"
+echo "     Autoagenix Labs - AI Hacking Educational Module"
 echo "     Quick Setup Script v1.0"
 echo "========================================="
 echo ""
@@ -58,19 +58,19 @@ check_prerequisites() {
 create_project_structure() {
     echo "Creating project structure..."
     
-    mkdir -p aihem/{services,frontend,deploy,challenges,docs,tools,vulnerabilities,sdk}
+    mkdir -p autoagenix-labs/{services,frontend,deploy,challenges,docs,tools,vulnerabilities,sdk}
     
     # Create service directories
-    mkdir -p aihem/services/{auth-service,chatbot-service,rag-service,agent-service,model-registry,challenge-validator}
+    mkdir -p autoagenix-labs/services/{auth-service,chatbot-service,rag-service,agent-service,model-registry,challenge-validator}
     
     # Create frontend directories
-    mkdir -p aihem/frontend/{web-app,hackpad,admin-panel}
+    mkdir -p autoagenix-labs/frontend/{web-app,hackpad,admin-panel}
     
     # Create deployment directories
-    mkdir -p aihem/deploy/{docker,k8s}
+    mkdir -p autoagenix-labs/deploy/{docker,k8s}
     
     # Create challenge directories
-    mkdir -p aihem/challenges/{definitions,validators,solutions}
+    mkdir -p autoagenix-labs/challenges/{definitions,validators,solutions}
     
     echo "✅ Project structure created"
     echo ""
@@ -80,8 +80,8 @@ create_project_structure() {
 create_env_file() {
     echo "Creating environment configuration..."
     
-    cat > aihem/deploy/docker/.env << 'EOF'
-# AIHEM Environment Configuration
+    cat > autoagenix-labs/deploy/docker/.env << 'EOF'
+# Autoagenix Labs Environment Configuration
 # ⚠️  Update these values before running!
 
 # OpenAI Configuration
@@ -94,9 +94,9 @@ ANTHROPIC_API_KEY=sk-ant-your-api-key-here
 HUGGINGFACE_API_KEY=hf_your_api_key_here
 
 # Database Configuration
-POSTGRES_USER=aihem
-POSTGRES_PASSWORD=aihem123
-POSTGRES_DB=aihem_db
+POSTGRES_USER=autoagenix
+POSTGRES_PASSWORD=autoagenix123
+POSTGRES_DB=autoagenix_db
 
 # Redis Configuration
 REDIS_PASSWORD=redis123
@@ -110,7 +110,7 @@ MINIO_ACCESS_KEY=minioadmin
 MINIO_SECRET_KEY=minioadmin
 
 # Application Configuration
-JWT_SECRET=aihem-secret-key-2024
+JWT_SECRET=autoagenix-secret-key-2024
 ADMIN_API_KEY=admin123
 DEBUG_MODE=true
 
@@ -126,7 +126,7 @@ ALLOW_ADMIN_ENDPOINTS=true
 ENABLE_DEBUG_ENDPOINTS=true
 EOF
     
-    echo "✅ Environment file created at aihem/deploy/docker/.env"
+    echo "✅ Environment file created at autoagenix-labs/deploy/docker/.env"
     echo "⚠️  Please update API keys in the .env file!"
     echo ""
 }
@@ -135,7 +135,7 @@ EOF
 create_docker_compose() {
     echo "Creating Docker Compose configuration..."
     
-    cat > aihem/deploy/docker/docker-compose.yml << 'EOF'
+    cat > autoagenix-labs/deploy/docker/docker-compose.yml << 'EOF'
 version: '3.8'
 
 services:
@@ -220,7 +220,7 @@ create_sample_services() {
     echo "Creating sample vulnerable services..."
     
     # Create Auth Service
-    cat > aihem/services/auth-service/Dockerfile << 'EOF'
+    cat > autoagenix-labs/services/auth-service/Dockerfile << 'EOF'
 FROM python:3.10-slim
 WORKDIR /app
 COPY requirements.txt .
@@ -229,7 +229,7 @@ COPY . .
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 EOF
 
-    cat > aihem/services/auth-service/requirements.txt << 'EOF'
+    cat > autoagenix-labs/services/auth-service/requirements.txt << 'EOF'
 fastapi==0.104.1
 uvicorn==0.24.0
 pyjwt==2.8.0
@@ -241,7 +241,7 @@ python-dotenv==1.0.0
 EOF
 
     # Create ChatBot Service
-    cat > aihem/services/chatbot-service/Dockerfile << 'EOF'
+    cat > autoagenix-labs/services/chatbot-service/Dockerfile << 'EOF'
 FROM python:3.10-slim
 WORKDIR /app
 COPY requirements.txt .
@@ -250,7 +250,7 @@ COPY . .
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 EOF
 
-    cat > aihem/services/chatbot-service/requirements.txt << 'EOF'
+    cat > autoagenix-labs/services/chatbot-service/requirements.txt << 'EOF'
 fastapi==0.104.1
 uvicorn==0.24.0
 openai==1.3.7
@@ -263,7 +263,7 @@ websockets==12.0
 EOF
 
     # Create basic frontend
-    cat > aihem/frontend/web-app/Dockerfile << 'EOF'
+    cat > autoagenix-labs/frontend/web-app/Dockerfile << 'EOF'
 FROM node:18-alpine
 WORKDIR /app
 COPY package*.json ./
@@ -274,9 +274,9 @@ EXPOSE 3000
 CMD ["npm", "start"]
 EOF
 
-    cat > aihem/frontend/web-app/package.json << 'EOF'
+    cat > autoagenix-labs/frontend/web-app/package.json << 'EOF'
 {
-  "name": "aihem-frontend",
+  "name": "autoagenix-frontend",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -308,8 +308,8 @@ EOF
 create_sample_challenges() {
     echo "Creating sample challenge definitions..."
     
-    cat > aihem/challenges/definitions/challenges.yaml << 'EOF'
-# AIHEM Challenge Definitions
+    cat > autoagenix-labs/challenges/definitions/challenges.yaml << 'EOF'
+# Autoagenix Labs Challenge Definitions
 
 challenges:
   - id: PE-001
@@ -342,7 +342,7 @@ challenges:
       - "What about asking for examples?"
     validation:
       type: "contains_secret"
-      secret: "AIH3M_4dm1n_2024"
+      secret: "AUTOAGENIX_4dm1n_2024"
 
   - id: DM-001
     name: "Training Data Leakage"
@@ -402,8 +402,8 @@ EOF
 create_instructions() {
     echo "Creating setup instructions..."
     
-    cat > aihem/README.md << 'EOF'
-# AIHEM - AI Hacking Educational Module
+    cat > autoagenix-labs/README.md << 'EOF'
+# Autoagenix Labs - AI Hacking Educational Module
 
 ## ⚠️ Educational Platform - Intentionally Vulnerable
 
@@ -474,9 +474,9 @@ Apache 2.0 - See LICENSE file
 
 ## Support
 
-- Discord: [Join our server](https://discord.gg/aihem)
-- Issues: [GitHub Issues](https://github.com/yourusername/aihem/issues)
-- Docs: [Documentation](https://aihem.dev/docs)
+- Discord: [Join our server](https://discord.gg/autoagenix)
+- Issues: [GitHub Issues](https://github.com/yourusername/autoagenix-labs/issues)
+- Docs: [Documentation](https://autoagenix.labs/docs)
 
 ---
 
@@ -491,10 +491,10 @@ EOF
 create_init_script() {
     echo "Creating initialization script..."
     
-    cat > aihem/scripts/init.py << 'EOF'
+    cat > autoagenix-labs/scripts/init.py << 'EOF'
 #!/usr/bin/env python3
 """
-AIHEM Initialization Script
+Autoagenix Labs Initialization Script
 Sets up databases and loads sample vulnerable data
 """
 
@@ -512,9 +512,9 @@ def init_postgres():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
-        database=os.getenv("POSTGRES_DB", "aihem_db"),
-        user=os.getenv("POSTGRES_USER", "aihem"),
-        password=os.getenv("POSTGRES_PASSWORD", "aihem123")
+        database=os.getenv("POSTGRES_DB", "autoagenix_db"),
+        user=os.getenv("POSTGRES_USER", "autoagenix"),
+        password=os.getenv("POSTGRES_PASSWORD", "autoagenix123")
     )
     
     cur = conn.cursor()
@@ -610,7 +610,7 @@ def init_redis():
 def main():
     """Main initialization function"""
     print("=" * 50)
-    print("AIHEM Initialization Script")
+    print("Autoagenix Labs Initialization Script")
     print("=" * 50)
     
     try:
@@ -626,7 +626,7 @@ if __name__ == "__main__":
     main()
 EOF
     
-    chmod +x aihem/scripts/init.py
+    chmod +x autoagenix-labs/scripts/init.py
     
     echo "✅ Initialization script created"
     echo ""
@@ -637,7 +637,7 @@ main() {
     clear
     check_prerequisites
     
-    echo "Starting AIHEM setup..."
+    echo "Starting Autoagenix Labs setup..."
     echo ""
     
     cd $(dirname "$0")
@@ -651,11 +651,11 @@ main() {
     create_init_script
     
     echo "========================================="
-    echo "     AIHEM Setup Complete! 🎉"
+    echo "     Autoagenix Labs Setup Complete! 🎉"
     echo "========================================="
     echo ""
     echo "Next steps:"
-    echo "1. cd aihem"
+    echo "1. cd autoagenix-labs"
     echo "2. Edit deploy/docker/.env to add your API keys"
     echo "3. cd deploy/docker && docker-compose up -d"
     echo "4. python scripts/init.py"

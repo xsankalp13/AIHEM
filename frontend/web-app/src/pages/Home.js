@@ -61,8 +61,8 @@ const Home = () => {
           bottom: 0,
           opacity: 0.1,
           background: `
-            radial-gradient(circle at 20% 50%, #00ff88 0%, transparent 50%),
-            radial-gradient(circle at 80% 50%, #00d9ff 0%, transparent 50%)
+            radial-gradient(circle at 20% 50%, #ff0055 0%, transparent 50%),
+            radial-gradient(circle at 80% 50%, #bf00ff 0%, transparent 50%)
           `
         }} />
 
@@ -76,12 +76,12 @@ const Home = () => {
             <div style={{
               display: 'inline-block',
               padding: '0.5rem 1.5rem',
-              background: 'rgba(0, 255, 136, 0.1)',
-              border: '1px solid #00ff88',
+              background: 'rgba(255, 0, 85, 0.1)',
+              border: '1px solid #ff0055',
               borderRadius: '30px',
               fontSize: '14px',
               fontWeight: 600,
-              color: '#00ff88',
+              color: '#ff0055',
               marginBottom: '2rem',
               textTransform: 'uppercase',
               letterSpacing: '2px'
@@ -93,7 +93,7 @@ const Home = () => {
               fontSize: '4rem',
               fontWeight: 700,
               marginBottom: '1.5rem',
-              background: 'linear-gradient(135deg, #00ff88 0%, #00d9ff 100%)',
+              background: 'linear-gradient(135deg, #ff0055 0%, #bf00ff 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -110,7 +110,7 @@ const Home = () => {
               marginBottom: '3rem',
               lineHeight: 1.8
             }}>
-              AIHEM is the comprehensive platform for learning AI/LLM security vulnerabilities.
+              Autoagenix Labs is the comprehensive platform for learning AI/LLM security vulnerabilities.
               <br />
               Practice real-world attacks in a safe, gamified environment.
             </p>
@@ -118,11 +118,11 @@ const Home = () => {
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
               <Link to="/challenges">
                 <motion.button
-                  whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(0, 255, 136, 0.5)' }}
+                  whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(255, 0, 85, 0.5)' }}
                   whileTap={{ scale: 0.95 }}
                   style={{
                     padding: '1rem 2.5rem',
-                    background: '#00ff88',
+                    background: '#ff0055',
                     border: 'none',
                     borderRadius: '8px',
                     color: '#000',
@@ -131,7 +131,7 @@ const Home = () => {
                     cursor: 'pointer',
                     textTransform: 'uppercase',
                     letterSpacing: '1px',
-                    boxShadow: '0 0 20px rgba(0, 255, 136, 0.3)'
+                    boxShadow: '0 0 20px rgba(255, 0, 85, 0.3)'
                   }}
                 >
                   Start Hacking →
@@ -144,9 +144,9 @@ const Home = () => {
                   style={{
                     padding: '1rem 2.5rem',
                     background: 'transparent',
-                    border: '2px solid #00ff88',
+                    border: '2px solid #ff0055',
                     borderRadius: '8px',
-                    color: '#00ff88',
+                    color: '#ff0055',
                     fontWeight: 700,
                     fontSize: '16px',
                     cursor: 'pointer',
@@ -185,7 +185,7 @@ const Home = () => {
                 <div style={{
                   fontSize: '2.5rem',
                   fontWeight: 700,
-                  color: '#00ff88',
+                  color: '#ff0055',
                   marginBottom: '0.5rem'
                 }}>
                   {stat.value}
@@ -220,7 +220,7 @@ const Home = () => {
               marginBottom: '1rem',
               color: '#fff'
             }}>
-              What Makes AIHEM Special?
+              What Makes Autoagenix Labs Special?
             </h2>
             <p style={{
               fontSize: '1.125rem',
@@ -244,7 +244,7 @@ const Home = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                whileHover={{ y: -8, borderColor: '#00ff88' }}
+                whileHover={{ y: -8, borderColor: '#ff0055' }}
                 style={{
                   background: '#151515',
                   border: '1px solid #2a2a2a',
@@ -292,18 +292,18 @@ const Home = () => {
             viewport={{ once: true }}
             style={{
               background: '#151515',
-              border: '2px solid #00ff88',
+              border: '2px solid #ff0055',
               borderRadius: '16px',
               padding: '4rem 2rem',
               textAlign: 'center',
-              boxShadow: '0 0 40px rgba(0, 255, 136, 0.2)'
+              boxShadow: '0 0 40px rgba(255, 0, 85, 0.2)'
             }}
           >
             <h2 style={{
               fontSize: '2.5rem',
               fontWeight: 700,
               marginBottom: '1rem',
-              background: 'linear-gradient(135deg, #00ff88, #00d9ff)',
+              background: 'linear-gradient(135deg, #ff0055, #bf00ff)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text'
@@ -321,11 +321,11 @@ const Home = () => {
             </p>
             <Link to="/register">
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(0, 255, 136, 0.5)' }}
+                whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(255, 0, 85, 0.5)' }}
                 whileTap={{ scale: 0.95 }}
                 style={{
                   padding: '1.25rem 3rem',
-                  background: '#00ff88',
+                  background: '#ff0055',
                   border: 'none',
                   borderRadius: '8px',
                   color: '#000',
@@ -334,7 +334,7 @@ const Home = () => {
                   cursor: 'pointer',
                   textTransform: 'uppercase',
                   letterSpacing: '1px',
-                  boxShadow: '0 0 20px rgba(0, 255, 136, 0.3)'
+                  boxShadow: '0 0 20px rgba(255, 0, 85, 0.3)'
                 }}
               >
                 Get Started For Free
@@ -363,7 +363,7 @@ const Home = () => {
                 fontSize: '1.5rem',
                 fontWeight: 700,
                 marginBottom: '1rem',
-                background: 'linear-gradient(135deg, #00ff88, #00d9ff)',
+                background: 'linear-gradient(135deg, #ff0055, #bf00ff)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 display: 'flex',
@@ -371,7 +371,7 @@ const Home = () => {
                 gap: '0.5rem'
               }}>
                 <span style={{ fontSize: '2rem' }}>🛡️</span>
-                AIHEM
+                Autoagenix Labs
               </div>
               <p style={{ color: '#a0a0a0', fontSize: '14px', lineHeight: 1.6 }}>
                 The comprehensive platform for learning AI/LLM security vulnerabilities through hands-on exploitation and gamified challenges.
@@ -385,19 +385,19 @@ const Home = () => {
               </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <span style={{ color: '#00ff88', marginRight: '0.5rem' }}>✓</span>
+                  <span style={{ color: '#ff0055', marginRight: '0.5rem' }}>✓</span>
                   <span style={{ color: '#a0a0a0', fontSize: '14px' }}>Security Training Programs</span>
                 </li>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <span style={{ color: '#00ff88', marginRight: '0.5rem' }}>✓</span>
+                  <span style={{ color: '#ff0055', marginRight: '0.5rem' }}>✓</span>
                   <span style={{ color: '#a0a0a0', fontSize: '14px' }}>Enterprise Red Team Exercises</span>
                 </li>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <span style={{ color: '#00ff88', marginRight: '0.5rem' }}>✓</span>
+                  <span style={{ color: '#ff0055', marginRight: '0.5rem' }}>✓</span>
                   <span style={{ color: '#a0a0a0', fontSize: '14px' }}>University AI Security Courses</span>
                 </li>
                 <li style={{ marginBottom: '0.75rem' }}>
-                  <span style={{ color: '#00ff88', marginRight: '0.5rem' }}>✓</span>
+                  <span style={{ color: '#ff0055', marginRight: '0.5rem' }}>✓</span>
                   <span style={{ color: '#a0a0a0', fontSize: '14px' }}>CTF Competitions</span>
                 </li>
               </ul>
@@ -409,7 +409,7 @@ const Home = () => {
                 Deploy Locally
               </h4>
               <p style={{ color: '#a0a0a0', fontSize: '14px', lineHeight: 1.6, marginBottom: '1rem' }}>
-                Run AIHEM on your own infrastructure for private training sessions with custom leaderboards.
+                Run Autoagenix Labs on your own infrastructure for private training sessions with custom leaderboards.
               </p>
               <div style={{
                 background: '#151515',
@@ -418,7 +418,7 @@ const Home = () => {
                 padding: '0.75rem',
                 fontSize: '12px',
                 fontFamily: 'monospace',
-                color: '#00ff88'
+                color: '#ff0055'
               }}>
                 docker-compose up -d
               </div>
@@ -442,13 +442,13 @@ const Home = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
-                  color: '#00ff88',
+                  color: '#ff0055',
                   textDecoration: 'none',
                   fontWeight: 700,
                   transition: 'color 0.2s'
                 }}
-                onMouseOver={(e) => e.target.style.color = '#00d9ff'}
-                onMouseOut={(e) => e.target.style.color = '#00ff88'}
+                onMouseOver={(e) => e.target.style.color = '#bf00ff'}
+                onMouseOut={(e) => e.target.style.color = '#ff0055'}
               >
                 Guard0
               </a>
@@ -456,11 +456,11 @@ const Home = () => {
             </div>
             <div style={{ display: 'flex', gap: '1.5rem' }}>
               <a
-                href="https://github.com/yourusername/aihem"
+                href="https://github.com/yourusername/autoagenix-labs"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#a0a0a0', fontSize: '14px', textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseOver={(e) => e.target.style.color = '#00ff88'}
+                onMouseOver={(e) => e.target.style.color = '#ff0055'}
                 onMouseOut={(e) => e.target.style.color = '#a0a0a0'}
               >
                 GitHub
@@ -468,7 +468,7 @@ const Home = () => {
               <a
                 href="/docs"
                 style={{ color: '#a0a0a0', fontSize: '14px', textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseOver={(e) => e.target.style.color = '#00ff88'}
+                onMouseOver={(e) => e.target.style.color = '#ff0055'}
                 onMouseOut={(e) => e.target.style.color = '#a0a0a0'}
               >
                 Docs
@@ -476,7 +476,7 @@ const Home = () => {
               <Link
                 to="/leaderboard"
                 style={{ color: '#a0a0a0', fontSize: '14px', textDecoration: 'none', transition: 'color 0.2s' }}
-                onMouseOver={(e) => e.target.style.color = '#00ff88'}
+                onMouseOver={(e) => e.target.style.color = '#ff0055'}
                 onMouseOut={(e) => e.target.style.color = '#a0a0a0'}
               >
                 Leaderboard

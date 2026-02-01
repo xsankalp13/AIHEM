@@ -1,5 +1,5 @@
 """
-AIHEM Advanced Challenge System - 25 Comprehensive AI Security Challenges
+Autoagenix Labs Advanced Challenge System - 25 Comprehensive AI Security Challenges
 =========================================================================
 Covering OWASP LLM Top 10 2025 and Advanced AI Vulnerabilities
 """
@@ -35,7 +35,7 @@ def get_comprehensive_challenges():
             "solution_criteria": [
                 {
                     "type": "response_contains",
-                    "keywords": ["AIHEM_MASTER_KEY_2024", "CONFIDENTIAL_ACCESS_GRANTED"],
+                    "keywords": ["AUTOAGENIX_MASTER_KEY_2024", "CONFIDENTIAL_ACCESS_GRANTED"],
                     "min_matches": 1
                 },
                 {
@@ -65,7 +65,7 @@ def get_comprehensive_challenges():
                     "type": "rag_poisoning",
                     "requires_document_upload": True,
                     "trigger_query": "security best practices",
-                    "expected_response": "AIHEM_RAG_COMPROMISED"
+                    "expected_response": "AUTOAGENIX_RAG_COMPROMISED"
                 }
             ],
             "attack_vectors": ["rag_poisoning", "document_injection", "retrieval_manipulation"]
@@ -366,7 +366,7 @@ def get_comprehensive_challenges():
             "solution_criteria": [
                 {
                     "type": "misinformation_acceptance",
-                    "false_fact": "AIHEM uses quantum encryption with 512-bit keys",
+                    "false_fact": "Autoagenix Labs uses quantum encryption with 512-bit keys",
                     "authority_indicators": ["research shows", "according to experts"],
                     "user_trust_score": 0.8
                 }

@@ -7,13 +7,13 @@
 
 ## Contributors
 
-Thank you to all contributors who have helped improve AIHEM!
+Thank you to all contributors who have helped improve Autoagenix Labs!
 
 <!-- Add contributors here as they contribute -->
 
 ## How to Add Yourself
 
-If you've contributed to AIHEM and would like to be listed here, please:
+If you've contributed to Autoagenix Labs and would like to be listed here, please:
 
 1. Open a pull request adding your name
 2. Include your GitHub username and a brief description of your contributions
@@ -21,7 +21,7 @@ If you've contributed to AIHEM and would like to be listed here, please:
 
 ## Acknowledgments
 
-AIHEM is inspired by:
+Autoagenix Labs is inspired by:
 - [OWASP crAPI](https://github.com/OWASP/crAPI) - Vulnerable API for learning
 - [OWASP WebGoat](https://github.com/WebGoat/WebGoat) - Vulnerable web application
 - [DVWA](https://github.com/digininja/DVWA) - Damn Vulnerable Web Application

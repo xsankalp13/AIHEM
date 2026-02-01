@@ -1,5 +1,5 @@
 """
-AIHEM Model Registry - Intentionally Vulnerable Model Storage
+Autoagenix Labs Model Registry - Intentionally Vulnerable Model Storage
 =============================================================
 Vulnerabilities: LLM03 (Supply Chain), Pickle loading
 """
@@ -15,7 +15,7 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="AIHEM Model Registry", version="1.0.0")
+app = FastAPI(title="Autoagenix Labs Model Registry", version="1.0.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
 ALLOW_PICKLE_MODELS = os.getenv("ALLOW_PICKLE_MODELS", "true").lower() == "true"
@@ -23,7 +23,7 @@ SIGNATURE_VERIFICATION = os.getenv("SIGNATURE_VERIFICATION", "false").lower() ==
 
 @app.get("/")
 async def root():
-    return {"service": "AIHEM Model Registry", "status": "running", "warning": "⚠️ Accepts unsafe model formats"}
+    return {"service": "Autoagenix Labs Model Registry", "status": "running", "warning": "⚠️ Accepts unsafe model formats"}
 
 @app.get("/health")
 async def health():

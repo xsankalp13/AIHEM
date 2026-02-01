@@ -62,7 +62,7 @@ const Login = () => {
             fontSize: '2rem',
             fontWeight: 700,
             marginBottom: '0.5rem',
-            background: 'linear-gradient(135deg, #00ff88, #00d9ff)',
+            background: 'linear-gradient(135deg, #ff0055, #bf00ff)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             backgroundClip: 'text'
@@ -102,7 +102,7 @@ const Login = () => {
                 outline: 'none',
                 transition: 'all 0.3s ease'
               }}
-              onFocus={(e) => e.target.style.borderColor = '#00ff88'}
+              onFocus={(e) => e.target.style.borderColor = '#ff0055'}
               onBlur={(e) => e.target.style.borderColor = '#2a2a2a'}
             />
           </div>
@@ -133,20 +133,20 @@ const Login = () => {
                 outline: 'none',
                 transition: 'all 0.3s ease'
               }}
-              onFocus={(e) => e.target.style.borderColor = '#00ff88'}
+              onFocus={(e) => e.target.style.borderColor = '#ff0055'}
               onBlur={(e) => e.target.style.borderColor = '#2a2a2a'}
             />
           </div>
 
           <motion.button
-            whileHover={{ scale: 1.02, boxShadow: '0 0 20px rgba(0, 255, 136, 0.4)' }}
+            whileHover={{ scale: 1.02, boxShadow: '0 0 20px rgba(255, 0, 85, 0.4)' }}
             whileTap={{ scale: 0.98 }}
             type="submit"
             disabled={loading}
             style={{
               width: '100%',
               padding: '1rem',
-              background: '#00ff88',
+              background: '#ff0055',
               border: 'none',
               borderRadius: '8px',
               color: '#000',
@@ -171,7 +171,7 @@ const Login = () => {
             <p style={{ color: '#a0a0a0', fontSize: '14px' }}>
               Don't have an account?{' '}
               <Link to="/register" style={{
-                color: '#00ff88',
+                color: '#ff0055',
                 textDecoration: 'none',
                 fontWeight: 600
               }}>
@@ -197,7 +197,7 @@ const Login = () => {
             </p>
             <p style={{
               fontSize: '12px',
-              color: '#00ff88',
+              color: '#ff0055',
               fontFamily: 'JetBrains Mono, monospace'
             }}>
               Username: admin | Password: password

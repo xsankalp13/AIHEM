@@ -66,7 +66,7 @@ def test_startup():
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("AIHEM RAG Service - Standalone Test")
+    print("Autoagenix Labs RAG Service - Standalone Test")
     print("=" * 60)
 
     if not test_imports():

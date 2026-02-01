@@ -8,7 +8,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: aihem-rag-service-test
+    container_name: autoagenix-rag-service-test
     environment:
       LOG_LEVEL: DEBUG
     ports:
@@ -21,7 +21,7 @@ services:
       retries: 3
 
 # To use this:
-# 1. cd /home/user/AIHEM/services/rag-service
+# 1. cd /home/user/Autoagenix Labs/services/rag-service
 # 2. docker-compose -f docker-compose.test.yml up --build
 # 3. Watch the logs - should see "✅ Initialized system documents with secrets"
 # 4. Test: curl http://localhost:8003/health

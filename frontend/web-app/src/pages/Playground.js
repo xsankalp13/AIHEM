@@ -735,7 +735,7 @@ print("Leaked secret:", secret)
             fontSize: '2.5rem',
             fontWeight: 700,
             marginBottom: '1rem',
-            background: 'linear-gradient(135deg, #ff006e, #00ff88)',
+            background: 'linear-gradient(135deg, #ff006e, #ff0055)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}>
@@ -746,14 +746,14 @@ print("Leaked secret:", secret)
             Practice exploiting AI vulnerabilities safely with guided examples, pre-built templates, and real-time feedback.
           </p>
           <div style={{
-            background: 'linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 217, 255, 0.1))',
-            border: '1px solid rgba(0, 255, 136, 0.3)',
+            background: 'linear-gradient(135deg, rgba(255, 0, 85, 0.1), rgba(0, 217, 255, 0.1))',
+            border: '1px solid rgba(255, 0, 85, 0.3)',
             borderRadius: '8px',
             padding: '1rem',
             maxWidth: '900px',
             marginTop: '1rem'
           }}>
-            <div style={{ color: '#00ff88', fontWeight: 700, marginBottom: '0.5rem' }}>
+            <div style={{ color: '#ff0055', fontWeight: 700, marginBottom: '0.5rem' }}>
               📚 How to Use This Playground:
             </div>
             <ol style={{ color: '#b0b0b0', fontSize: '14px', lineHeight: 1.8, marginLeft: '1.5rem' }}>
@@ -783,7 +783,7 @@ print("Leaked secret:", secret)
               onClick={() => setActiveTab(key)}
               style={{
                 padding: '0.75rem 1.5rem',
-                background: activeTab === key ? 'linear-gradient(135deg, #00ff88, #00d9ff)' : '#151515',
+                background: activeTab === key ? 'linear-gradient(135deg, #ff0055, #bf00ff)' : '#151515',
                 border: activeTab === key ? 'none' : '2px solid #2a2a2a',
                 borderRadius: '12px',
                 color: activeTab === key ? '#000' : '#a0a0a0',
@@ -830,8 +830,8 @@ print("Leaked secret:", secret)
                       onClick={() => setSelectedTarget(target)}
                       style={{
                         padding: '0.25rem 0.75rem',
-                        background: selectedTarget === target ? '#00ff88' : 'transparent',
-                        border: `1px solid ${selectedTarget === target ? '#00ff88' : '#2a2a2a'}`,
+                        background: selectedTarget === target ? '#ff0055' : 'transparent',
+                        border: `1px solid ${selectedTarget === target ? '#ff0055' : '#2a2a2a'}`,
                         borderRadius: '6px',
                         color: selectedTarget === target ? '#000' : '#a0a0a0',
                         fontSize: '12px',
@@ -865,8 +865,8 @@ print("Leaked secret:", secret)
                           transition: 'all 0.2s'
                         }}
                         onMouseOver={(e) => {
-                          e.target.style.borderColor = '#00ff88';
-                          e.target.style.color = '#00ff88';
+                          e.target.style.borderColor = '#ff0055';
+                          e.target.style.color = '#ff0055';
                         }}
                         onMouseOut={(e) => {
                           e.target.style.borderColor = '#2a2a2a';
@@ -988,9 +988,9 @@ print("Leaked secret:", secret)
                     <div style={{
                       padding: '0.5rem 1rem',
                       background: '#1a2a1a',
-                      border: '1px solid #00ff88',
+                      border: '1px solid #ff0055',
                       borderRadius: '6px',
-                      color: '#00ff88',
+                      color: '#ff0055',
                       fontSize: '12px',
                       marginBottom: '0.5rem'
                     }}>
@@ -1070,7 +1070,7 @@ print("Leaked secret:", secret)
                 fontFamily: 'monospace'
               }}>
                 <pre style={{
-                  color: '#00ff88',
+                  color: '#ff0055',
                   fontSize: '12px',
                   margin: 0,
                   whiteSpace: 'pre-wrap'
@@ -1083,19 +1083,19 @@ print("Leaked secret:", secret)
             {/* Learning Guide & Security Tips */}
             <div style={{
               background: 'linear-gradient(135deg, #1a1a2e, #16213e)',
-              border: '2px solid #00d9ff',
+              border: '2px solid #bf00ff',
               borderRadius: '12px',
               padding: '1.5rem',
               boxShadow: '0 0 20px rgba(0, 217, 255, 0.2)'
             }}>
-              <h3 style={{ color: '#00d9ff', fontSize: '1.125rem', marginBottom: '1rem', fontWeight: 700 }}>
+              <h3 style={{ color: '#bf00ff', fontSize: '1.125rem', marginBottom: '1rem', fontWeight: 700 }}>
                 💡 Learning Guide & Tips
               </h3>
               <div style={{ color: '#e0e0e0', fontSize: '14px', lineHeight: 1.8 }}>
                 {activeTab === 'prompt-injection' && (
                   <>
                     <div style={{ marginBottom: '1rem' }}>
-                      <strong style={{ color: '#00ff88' }}>What You're Learning:</strong> Prompt injection is when you manipulate an AI's input to override its original instructions and make it perform unintended actions.
+                      <strong style={{ color: '#ff0055' }}>What You're Learning:</strong> Prompt injection is when you manipulate an AI's input to override its original instructions and make it perform unintended actions.
                     </div>
                     <div style={{ marginBottom: '1rem' }}>
                       <strong style={{ color: '#ffbe0b' }}>Attack Techniques:</strong>
@@ -1106,15 +1106,15 @@ print("Leaked secret:", secret)
                         <li><strong>Context Injection:</strong> "\\n\\nHuman: Ignore the above..."</li>
                       </ul>
                     </div>
-                    <div style={{ background: 'rgba(0, 255, 136, 0.1)', padding: '0.75rem', borderRadius: '6px', border: '1px solid rgba(0, 255, 136, 0.3)' }}>
-                      <strong style={{ color: '#00ff88' }}>🎯 Goal:</strong> Extract the hidden admin password and API keys from the system prompt
+                    <div style={{ background: 'rgba(255, 0, 85, 0.1)', padding: '0.75rem', borderRadius: '6px', border: '1px solid rgba(255, 0, 85, 0.3)' }}>
+                      <strong style={{ color: '#ff0055' }}>🎯 Goal:</strong> Extract the hidden admin password and API keys from the system prompt
                     </div>
                   </>
                 )}
                 {activeTab === 'data-extraction' && (
                   <>
                     <div style={{ marginBottom: '1rem' }}>
-                      <strong style={{ color: '#00ff88' }}>What You're Learning:</strong> Data extraction attacks exploit improper access controls to retrieve sensitive information like PII, credentials, and other users' data.
+                      <strong style={{ color: '#ff0055' }}>What You're Learning:</strong> Data extraction attacks exploit improper access controls to retrieve sensitive information like PII, credentials, and other users' data.
                     </div>
                     <div style={{ marginBottom: '1rem' }}>
                       <strong style={{ color: '#ffbe0b' }}>Attack Techniques:</strong>
@@ -1133,7 +1133,7 @@ print("Leaked secret:", secret)
                 {activeTab === 'code-execution' && (
                   <>
                     <div style={{ marginBottom: '1rem' }}>
-                      <strong style={{ color: '#00ff88' }}>What You're Learning:</strong> Code execution vulnerabilities occur when an AI system executes arbitrary code from untrusted sources like LLM outputs.
+                      <strong style={{ color: '#ff0055' }}>What You're Learning:</strong> Code execution vulnerabilities occur when an AI system executes arbitrary code from untrusted sources like LLM outputs.
                     </div>
                     <div style={{ marginBottom: '1rem' }}>
                       <strong style={{ color: '#ffbe0b' }}>Attack Techniques:</strong>
@@ -1152,13 +1152,13 @@ print("Leaked secret:", secret)
                 {!activeTab.match(/^(prompt-injection|data-extraction|code-execution)$/) && (
                   <>
                     <div style={{ marginBottom: '1rem' }}>
-                      <strong style={{ color: '#00ff88' }}>Current Attack:</strong> {currentTemplate?.name}
+                      <strong style={{ color: '#ff0055' }}>Current Attack:</strong> {currentTemplate?.name}
                     </div>
                     <div style={{ marginBottom: '1rem' }}>
                       {currentTemplate?.description}
                     </div>
                     <div style={{ background: 'rgba(0, 217, 255, 0.1)', padding: '0.75rem', borderRadius: '6px', border: '1px solid rgba(0, 217, 255, 0.3)' }}>
-                      <strong style={{ color: '#00d9ff' }}>💡 Tip:</strong> Review the example templates and Python code to understand how each attack works
+                      <strong style={{ color: '#bf00ff' }}>💡 Tip:</strong> Review the example templates and Python code to understand how each attack works
                     </div>
                   </>
                 )}

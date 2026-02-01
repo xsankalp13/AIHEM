@@ -1,6 +1,6 @@
-# Contributing to AIHEM
+# Contributing to Autoagenix Labs
 
-Thank you for your interest in contributing to AIHEM! This document provides guidelines and instructions for contributing to the project.
+Thank you for your interest in contributing to Autoagenix Labs! This document provides guidelines and instructions for contributing to the project.
 
 ## 📋 Table of Contents
 
@@ -22,12 +22,12 @@ This project adheres to a Code of Conduct that all contributors are expected to 
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/AIHEM.git
-   cd AIHEM
+   git clone https://github.com/YOUR_USERNAME/autoagenix-labs.git
+   cd Autoagenix Labs
    ```
 3. **Add the upstream remote**:
    ```bash
-   git remote add upstream https://github.com/JBAhire/AIHEM.git
+   git remote add upstream https://github.com/JBAhire/autoagenix-labs.git
    ```
 4. **Create a branch** for your changes:
    ```bash
@@ -260,5 +260,5 @@ Contributors will be:
 - Credited in release notes
 - Acknowledged in the project README
 
-Thank you for contributing to AIHEM! 🎯🔒
+Thank you for contributing to Autoagenix Labs! 🎯🔒
 

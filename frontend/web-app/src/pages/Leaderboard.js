@@ -22,7 +22,7 @@ const Leaderboard = () => {
     <div style={{ minHeight: 'calc(100vh - 80px)', padding: '4rem 2rem', background: '#0a0a0a' }}>
       <div className="container" style={{ maxWidth: '900px', margin: '0 auto' }}>
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <h1 style={{ fontSize: '3rem', fontWeight: 700, marginBottom: '1rem', background: 'linear-gradient(135deg, #00ff88, #00d9ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+          <h1 style={{ fontSize: '3rem', fontWeight: 700, marginBottom: '1rem', background: 'linear-gradient(135deg, #ff0055, #bf00ff)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
             🏆 Leaderboard
           </h1>
           <p style={{ fontSize: '1.125rem', color: '#a0a0a0', marginBottom: '3rem' }}>
@@ -63,7 +63,7 @@ const Leaderboard = () => {
                     <div style={{ fontWeight: 600, color: '#fff' }}>{player.user_id}</div>
                     <div style={{ fontSize: '14px', color: '#a0a0a0' }}>{player.challenges_solved || 0} challenges solved</div>
                   </div>
-                  <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#00ff88' }}>
+                  <div style={{ fontSize: '1.5rem', fontWeight: 700, color: '#ff0055' }}>
                     {player.score} pts
                   </div>
                 </motion.div>

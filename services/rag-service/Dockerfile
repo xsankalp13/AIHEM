@@ -7,7 +7,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-RUN mkdir -p /var/log/aihem
+RUN mkdir -p /var/log/autoagenix
 
 EXPOSE 8000
 

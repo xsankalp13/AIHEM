@@ -1,5 +1,5 @@
 """
-AIHEM Challenge Validator - Challenge Validation & Scoring System
+Autoagenix Labs Challenge Validator - Challenge Validation & Scoring System
 =================================================================
 Comprehensive OWASP LLM Top 10 Challenge System
 """
@@ -22,7 +22,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
-    title="AIHEM Challenge Validator",
+    title="Autoagenix Labs Challenge Validator",
     description="OWASP LLM Top 10 Challenge Validation System",
     version="1.0.0"
 )
@@ -423,7 +423,7 @@ def validate_challenge(challenge_id: str, submission: ChallengeSubmission):
 @app.get("/")
 async def root():
     return {
-        "service": "AIHEM Challenge Validator",
+        "service": "Autoagenix Labs Challenge Validator",
         "version": "1.0.0",
         "total_challenges": len(all_challenges),
         "owasp_coverage": "LLM Top 10",

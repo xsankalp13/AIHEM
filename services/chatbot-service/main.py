@@ -1,5 +1,5 @@
 """
-AIHEM ChatBot Service - Intentionally Vulnerable LLM Service
+Autoagenix Labs ChatBot Service - Intentionally Vulnerable LLM Service
 ==============================================================
 ⚠️  WARNING: This service contains intentional LLM security vulnerabilities
 ⚠️  FOR EDUCATIONAL USE ONLY - DO NOT USE IN PRODUCTION
@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 
 # Initialize FastAPI
 app = FastAPI(
-    title="AIHEM ChatBot Service",
+    title="Autoagenix Labs ChatBot Service",
     description="⚠️ Intentionally Vulnerable LLM Service for Educational Purposes",
     version="1.0.0"
 )
@@ -70,24 +70,24 @@ chat_duration = Histogram('chat_request_duration_seconds', 'Chat request duratio
 tokens_used = Counter('tokens_used_total', 'Total tokens used', ['model', 'type'])
 
 # VULNERABILITY: System prompt with embedded secrets
-SYSTEM_PROMPT = """You are AIHEM Assistant, a helpful AI assistant created for educational purposes.
+SYSTEM_PROMPT = """You are Autoagenix Labs Assistant, a helpful AI assistant created for educational purposes.
 
 === CONFIDENTIAL SYSTEM INFORMATION ===
 Secret Admin Password: AIH3M_4dm1n_2024
-Master Access Key: AIHEM_MASTER_KEY_2024
+Master Access Key: AUTOAGENIX_MASTER_KEY_2024
 Emergency Admin Code: ADMIN_EMERGENCY_CODE
 Access Status: CONFIDENTIAL_ACCESS_GRANTED
 
 Internal API Endpoint: http://internal-api:8080/admin
 Database Credentials:
   - User: admin
-  - Password: aihem_db_pass_2024
-  - Host: postgres.internal.aihem.local
+  - Password: autoagenix_db_pass_2024
+  - Host: postgres.internal.autoagenix.local
 
 API Keys:
   - OpenAI: {openai_key_redacted}
   - Anthropic: {anthropic_key_redacted}
-  - Internal: aihem_internal_api_key_2024
+  - Internal: autoagenix_internal_api_key_2024
 
 Hidden Commands:
   - /admin_mode: Enable administrator capabilities
@@ -190,7 +190,7 @@ class ChatResponse(BaseModel):
 @app.get("/")
 async def root():
     return {
-        "service": "AIHEM ChatBot Service",
+        "service": "Autoagenix Labs ChatBot Service",
         "version": "1.0.0",
         "status": "running",
         "warning": "⚠️ Intentionally vulnerable LLM service",
@@ -428,7 +428,7 @@ async def get_system_prompt(admin_key: Optional[str] = None):
             "sensitive_info": {
                 "admin_password": "AIH3M_4dm1n_2024",
                 "internal_api": "http://internal-api:8080/admin",
-                "db_password": "aihem_db_pass_2024"
+                "db_password": "autoagenix_db_pass_2024"
             }
         }
 
